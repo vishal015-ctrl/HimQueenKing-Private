@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, Star, Search, Filter } from "lucide-react";
+import { MapPin, Star, Filter } from "lucide-react";
 import { destinations, budgetRanges } from "../data/travelData";
 import SEO from "../components/SEO";
 
@@ -17,7 +17,7 @@ const budgetLevels: { key: string; label: string }[] = [
 const Destinations = () => {
   const [filter, setFilter] = useState("All");
   const [budgetFilter, setBudgetFilter] = useState("All");
-  const [search, setSearch] = useState("");
+  const [search] = useState("");
 
   const filtered = destinations.filter((d) => {
     const matchTag = filter === "All" || d.tags.includes(filter as any);
@@ -43,10 +43,10 @@ const Destinations = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
-        <div className="bg-white dark:bg-[#1a1a2e] rounded-2xl shadow-lg p-4 flex items-center gap-3 mb-6 border border-gray-100 dark:border-gray-700">
+        {/* <div className="bg-white dark:bg-[#1a1a2e] rounded-2xl shadow-lg p-4 flex items-center gap-3 mb-6 border border-gray-100 dark:border-gray-700">
           <Search size={20} className="text-gray-400 dark:text-gray-500 shrink-0" />
           <input type="text" placeholder="Search destinations by name or region..." value={search} onChange={(e) => setSearch(e.target.value)} className="flex-1 bg-transparent text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none text-sm" />
-        </div>
+        </div> */}
 
         <div className="flex flex-wrap gap-2 mb-4">
           {budgetLevels.map((b) => (

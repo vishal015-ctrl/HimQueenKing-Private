@@ -33,13 +33,12 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled
-        ? dark
-          ? "bg-[#0f0f1a]/95 backdrop-blur-md shadow-sm border-b border-gray-800"
-          : "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100"
-        : dark ? "bg-[#0f0f1a]" : "bg-white"
-    }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+      ? dark
+        ? "bg-[#0f0f1a]/95 backdrop-blur-md shadow-sm border-b border-gray-800"
+        : "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100"
+      : dark ? "bg-[#0f0f1a]" : "bg-white"
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -47,7 +46,7 @@ const Header = () => {
             <img
               src={logo}
               alt="HimQueenKing"
-              className="h-10 lg:h-12 w-auto object-contain"
+              className="h-15 lg:h-20 w-auto object-contain"
             />
           </a>
 
@@ -58,10 +57,10 @@ const Header = () => {
                 key={link.label}
                 href={link.href}
                 className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg ${isActive(link.href)
-                    ? "text-[#b8860b] bg-[#b8860b]/10"
-                    : dark
-                      ? "text-gray-400 hover:text-white hover:bg-white/5"
-                      : "text-gray-600 hover:text-[#1a1a2e] hover:bg-gray-50"
+                  ? "text-[#b8860b] bg-[#b8860b]/10"
+                  : dark
+                    ? "text-gray-400 hover:text-white hover:bg-white/5"
+                    : "text-gray-600 hover:text-[#1a1a2e] hover:bg-gray-50"
                   }`}
               >
                 {link.label}
@@ -74,11 +73,10 @@ const Header = () => {
             {/* Dark Mode Toggle */}
             <button
               onClick={toggle}
-              className={`p-2.5 rounded-xl transition-all ${
-                dark
+              className={`p-2.5 rounded-xl transition-all ${dark
                   ? "bg-gray-800 text-yellow-400 hover:bg-gray-700"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
+                }`}
               aria-label="Toggle dark mode"
             >
               {dark ? <Sun size={18} /> : <Moon size={18} />}
@@ -112,10 +110,10 @@ const Header = () => {
                 key={link.label}
                 href={link.href}
                 className={`block px-4 py-3 rounded-lg font-medium transition-colors ${isActive(link.href)
-                    ? "bg-[#b8860b]/10 text-[#b8860b]"
-                    : dark
-                      ? "text-gray-400 hover:bg-gray-800 hover:text-white"
-                      : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                  ? "bg-[#b8860b]/10 text-[#b8860b]"
+                  : dark
+                    ? "text-gray-400 hover:bg-gray-800 hover:text-white"
+                    : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                   }`}
                 onClick={() => setMobileOpen(false)}
               >

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, TrendingUp, Calendar, Search, MessageCircle, ChevronDown, ChevronUp, UtensilsCrossed, Tent, MapPin } from "lucide-react";
+import { Clock, TrendingUp, Calendar, MessageCircle, ChevronDown, ChevronUp, UtensilsCrossed, Tent, MapPin, Mountain, CheckCircle2 } from "lucide-react";
 import SEO from "../components/SEO";
 
 const allTreks = [
@@ -167,6 +167,474 @@ const allTreks = [
     tentInfo: "3-season expedition tents. Sleeping bags (-5°C rated). Sleeping mats. Dining tent with chairs. Porters for all camping gear.",
     mealsInfo: "All meals included – 3 meals per day + tea/snacks. Camp-cooked fresh food. Local pahadi cuisine. Packed lunch for long days.",
   },
+  {
+    id: 13, title: "Bhrigu Lake Trek", region: "Manali, HP", difficulty: "Moderate", duration: "4D / 3N", altitude: "14,100 ft", bestTime: "May – Oct",
+    image: "/images/trek-bhrigu-lake.jpg",
+    desc: "A beautiful high-altitude lake trek above Manali with rolling green meadows, changing alpine scenery and grand views of the Pir Panjal and Dhauladhar ranges.",
+    itinerary: [
+      { day: "Day 1", title: "Manali → Gulaba → Rola Kholi", activities: ["Drive from Manali to Gulaba (16 km)", "Trek to Rola Kholi camp (8 km)", "Walk through pine & birch forests"], meals: "Lunch & Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Rola Kholi → Bhrigu Lake → Rola Kholi (10 km)", activities: ["Trek to Bhrigu Lake (14,100 ft)", "Sacred glacial lake with emerald water", "Packed lunch at the lake", "Return to Rola Kholi"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Rola Kholi → Gulaba → Manali", activities: ["Trek down to Gulaba", "Drive back to Manali", "Free evening at Old Manali"], meals: "Breakfast & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 4", title: "Manali → Delhi", activities: ["Morning local sightseeing", "Board evening Volvo to Delhi", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Alpine dome tents with sleeping bags & mats. Dining tent with chairs. Toilet tent at campsite. Porters for camping gear.",
+    mealsInfo: "All meals included at camp. Freshly cooked pahadi food – dal, rice, roti, sabzi, eggs, tea. Packed lunch for the lake day.",
+  },
+  {
+    id: 14, title: "Sar Pass Trek", region: "Kasol, HP", difficulty: "Moderate", duration: "5D / 4N", altitude: "13,800 ft", bestTime: "Apr – Jun, Sep – Oct",
+    image: "/images/trek-sar-pass.jpg",
+    desc: "A classic Parvati Valley trek famous for its grand snow slides near the summit. Combines pine forests, Grahan village and wide snowfields.",
+    itinerary: [
+      { day: "Day 1", title: "Kasol → Grahan Village (Trek 9 km)", activities: ["Trek from Kasol to Grahan village", "Walk along the Grahan nala", "Reach Grahan camp", "Village walk"], meals: "Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Grahan → Min Thach (Trek 9 km)", activities: ["Ascend through dense forests", "Reach Min Thach clearing", "Camp among rhododendrons"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Min Thach → Nagaru (Trek 7 km)", activities: ["Trek above the treeline", "Reach Nagaru camp (12,500 ft)", "Panoramic Parvati Valley views", "Early night for summit day"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Nagaru → Sar Pass → Biskeri Thach (Trek 14 km)", activities: ["Early summit push to Sar Pass (13,800 ft)", "Famous snow slide down", "Continue to Biskeri Thach camp", "Views of Kullu valley"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Biskeri Thach → Barshaini → Kasol", activities: ["Trek down to Barshaini", "Drive back to Kasol", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "3-season tents with sleeping bags (-5°C). Sleeping mats & pillows. Crutches & gaiters provided for snow section. Dining tent included.",
+    mealsInfo: "All meals included – hot fresh camp food. 3 meals a day + tea/snacks. Packed lunch for long trek days.",
+  },
+  {
+    id: 15, title: "Indrahar Pass Trek", region: "Dharamshala, HP", difficulty: "Challenging", duration: "4D / 3N", altitude: "14,245 ft", bestTime: "May – Jun, Sep – Oct",
+    image: "/images/trek-indrahar-pass.jpg",
+    desc: "A demanding trek across the Dhauladhar range from McLeod Ganj, crossing high passes with spectacular views of the Kangra and Chamba valleys.",
+    itinerary: [
+      { day: "Day 1", title: "McLeod Ganj → Triund → Laka Got (Trek 9 km)", activities: ["Trek from McLeod Ganj to Triund", "Continue to Laka Got camp", "Sunset over the Dhauladhar"], meals: "Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Laka Got → Indrahar Pass → Chata Parao (Trek 10 km)", activities: ["Early ascent to Indrahar Pass (14,245 ft)", "Cross the Dhauladhar range", "Descend to Chata Parao camp", "Views of Chamba valley"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Chata Parao → Kuarsi Village (Trek 10 km)", activities: ["Descend through forests", "Pass alpine meadows & streams", "Reach Kuarsi village camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Kuarsi → Chamba", activities: ["Trek down to the road head", "Drive to Chamba", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade tents. Sleeping bags rated to -10°C. Sleeping mats & pillows. Dining tent. Crampons & gaiters for the pass.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. High-energy packed meals for summit day. Hot soup at camp.",
+  },
+  {
+    id: 16, title: "Kareri Lake Trek", region: "Dharamshala, HP", difficulty: "Moderate", duration: "3D / 2N", altitude: "9,650 ft", bestTime: "Mar – Jun, Sep – Dec",
+    image: "/images/trek-kareri-lake.jpg",
+    desc: "A freshwater lake fed by snow melt below the Minkiani Pass. A short, scenic trek from Dharamshala through forests and riverside meadows.",
+    itinerary: [
+      { day: "Day 1", title: "Dharamshala → Kareri Village → Riyoti (Trek 9 km)", activities: ["Drive from Dharamshala to Kareri village", "Trek to Riyoti riverside camp (9 km)", "Walk through pine forests"], meals: "Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Riyoti → Kareri Lake → Riyoti (Trek 13 km)", activities: ["Trek to Kareri Lake (9,650 ft)", "Glacial lake below Minkiani Pass", "Packed lunch at the lake", "Return to camp", "Bonfire night"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Riyoti → Kareri → Dharamshala", activities: ["Trek back to Kareri village", "Drive to Dharamshala", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Alpine tents with sleeping bags & mats. Dining tent. Toilet tent at campsite. Porters for luggage.",
+    mealsInfo: "All meals included at camp. Freshly cooked meals – parathas, eggs, rice, dal, soup. Hot beverages throughout.",
+  },
+  {
+    id: 17, title: "Chandrakhani Pass Trek", region: "Kullu, HP", difficulty: "Moderate", duration: "4D / 3N", altitude: "12,000 ft", bestTime: "Jun – Oct",
+    image: "/images/trek-chandrakhani-pass.jpg",
+    desc: "A scenic crossover trek from Naggar to Malana over the Chandrakhani Pass, with sweeping Dhauladhar and Pir Panjal views and rich local legend.",
+    itinerary: [
+      { day: "Day 1", title: "Naggar → Rumsu (Trek 5 km)", activities: ["Drive from Naggar to Rumsu village", "Short trek to forest camp", "Village walk & acclimatization"], meals: "Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Rumsu → Chaklani (Trek 8 km)", activities: ["Trek through mixed forest", "Reach Chaklani meadow camp", "View of Deo Tibba & Indrasan peaks"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Chaklani → Chandrakhani Pass → Malana (Trek 10 km)", activities: ["Ascend to Chandrakhani Pass (12,000 ft)", "Panoramic Himalayan views", "Descend towards Malana village", "Camp near Malana"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Malana → Jari → Kasol", activities: ["Trek down to Malana gate", "Drive from Jari to Kasol", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "3-season tents with sleeping bags & mats. Dining tent with chairs. Toilet tent at campsite. Porters for camping gear.",
+    mealsInfo: "All meals included – hot fresh camp food. 3 meals a day + tea/snacks. Local pahadi cuisine. Packed lunch for pass day.",
+  },
+  {
+    id: 18, title: "Deo Tibba Base Trek", region: "Manali, HP", difficulty: "Challenging", duration: "6D / 5N", altitude: "14,000 ft", bestTime: "Jun – Sep",
+    image: "/images/trek-deo-tibba-base.jpg",
+    desc: "A rewarding trek through the pristine Jagatsukh valley to the base of the majestic Deo Tibba peak, passing alpine meadows and glacial moraines.",
+    itinerary: [
+      { day: "Day 1", title: "Manali → Jagatsukh → Chhika (Trek 4 km)", activities: ["Drive from Manali to Jagatsukh", "Trek to Chhika camp (4 km)", "Riverside forest camp"], meals: "Lunch & Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Chhika → Seri (Trek 8 km)", activities: ["Trek through deodar forests", "Cross wooden bridges over the Jagatsukh nala", "Reach Seri meadow camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Seri → Tainta (Trek 6 km)", activities: ["Ascend to Tainta meadow", "Views of Deo Tibba & Indrasan", "Acclimatization at camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Tainta → Deo Tibba Base → Tainta (Trek 6 km)", activities: ["Trek to Deo Tibba base (14,000 ft)", "Glacier & moraine walk", "Packed lunch at base", "Return to Tainta"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Tainta → Chhika (Trek 12 km)", activities: ["Long descent through meadows & forest", "Reach Chhika camp", "Farewell bonfire"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Chhika → Jagatsukh → Manali", activities: ["Trek down to Jagatsukh", "Drive to Manali", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade tents. Sleeping bags (-10°C rated). Sleeping mats & pillows. Dining tent. Mule/porter service for luggage.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. Freshly cooked camp food. Packed lunch for the base camp day.",
+  },
+  {
+    id: 19, title: "Chopta Chandrashila Trek", region: "Chopta, UK", difficulty: "Easy", duration: "3D / 2N", altitude: "13,000 ft", bestTime: "Mar – Jun, Sep – Dec",
+    image: "/images/trek-chopta-chandrashila.jpg",
+    desc: "A short and rewarding trek to the Tungnath temple and the Chandrashila summit, offering a 360° panorama of Nanda Devi, Trishul and Chaukhamba.",
+    itinerary: [
+      { day: "Day 1", title: "Rishikesh → Chopta (170 km)", activities: ["Drive to Chopta via Devprayag & Rudraprayag", "Trek to Deoria Tal (2.5 km)", "Camp at the meadow"], meals: "Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Chopta → Tungnath → Chandrashila → Chopta", activities: ["Trek to Tungnath (3.5 km)", "Visit the highest Shiva temple in the world", "Summit Chandrashila (13,000 ft)", "Return to Chopta camp"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Chopta → Rishikesh", activities: ["Morning meadow walk", "Drive back to Rishikesh", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Alpine tents with sleeping bags & mats. Dining tent. Toilet tent at campsite. Bonfire arrangements in season.",
+    mealsInfo: "All meals included at camp. Freshly cooked pahadi food – dal, rice, roti, sabzi, eggs, tea. Packed lunch for summit day.",
+  },
+  {
+    id: 20, title: "Dayara Bugyal Trek", region: "Uttarkashi, UK", difficulty: "Moderate", duration: "5D / 4N", altitude: "12,000 ft", bestTime: "Apr – Jun, Sep – Nov",
+    image: "/images/trek-dayara-bugyal.jpg",
+    desc: "A gentle trek to one of India's most beautiful high-altitude meadows, with grand views of Bandarpunch, Swargarohini and the Gangotri range.",
+    itinerary: [
+      { day: "Day 1", title: "Dehradun → Barsu (180 km)", activities: ["Drive from Dehradun to Barsu village", "Arrive trek base", "Village walk & briefing"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Barsu → Barnala Tal (Trek 5 km)", activities: ["Trek through pine & oak forests", "Reach Barnala Tal camp", "Evening by the lake"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Barnala → Dayara Bugyal (Trek 5 km)", activities: ["Ascend to Dayara Bugyal meadow", "Rolling green expanses & Himalayan views", "Camp on the meadow"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Dayara Bugyal → Barsu (Trek 9 km)", activities: ["Morning view of Bandarpunch & Gangotri range", "Descend to Barsu", "Overnight at guesthouse"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 5", title: "Barsu → Dehradun", activities: ["Drive back to Dehradun", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "3-season tents with sleeping bags & mats. Dining tent with chairs. Toilet tent at campsite. Porters for camping gear.",
+    mealsInfo: "All meals included – hot fresh camp food. 3 meals a day + tea/snacks. Local pahadi cuisine. Packed lunch for trek days.",
+  },
+  {
+    id: 21, title: "Kuari Pass Trek", region: "Joshimath, UK", difficulty: "Moderate", duration: "6D / 5N", altitude: "12,516 ft", bestTime: "Oct – Mar",
+    image: "/images/trek-kuari-pass.jpg",
+    desc: "The legendary 'Lord Curzon Trail' offering close-up views of Nanda Devi, Dronagiri, Kamet and Trishul from the Kuari Pass, crossing oak and rhododendron forests.",
+    itinerary: [
+      { day: "Day 1", title: "Haridwar → Joshimath (280 km)", activities: ["Drive through Devprayag & Rudraprayag", "Arrive Joshimath", "Narsingh Temple visit"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Joshimath → Dhak Village (Trek 4 km)", activities: ["Drive to Dhak village", "Short trek to Tugasi camp", "First views of Dronagiri"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Tugasi → Gulling (Trek 8 km)", activities: ["Trek through rhododendron & oak forest", "Reach Gulling meadow camp", "Views of Nanda Devi"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Gulling → Khullara → Kuari Pass (Trek 10 km)", activities: ["Trek to Khullara camp", "Continue to Kuari Pass (12,516 ft)", "Grandstand views of Nanda Devi & Kamet", "Return to Khullara"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Khullara → Dhak → Joshimath", activities: ["Descend to Dhak village", "Drive to Joshimath", "Rest & local visit"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 6", title: "Joshimath → Haridwar", activities: ["Drive back to Haridwar", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "3-season tents with sleeping bags (-5°C). Sleeping mats & pillows. Dining tent with chairs. Porters for camping equipment.",
+    mealsInfo: "All meals included – fresh camp-cooked food. 3 meals a day + tea/snacks. Packed lunch for the pass day.",
+  },
+  {
+    id: 22, title: "Rupin Pass Trek", region: "Uttarakhand, UK", difficulty: "Challenging", duration: "8D / 7N", altitude: "15,250 ft", bestTime: "May – Jun, Sep – Oct",
+    image: "/images/trek-rupin-pass.jpg",
+    desc: "One of India's most dramatic crossover treks, climbing from the green valleys of Uttarakhand to Kinnaur in Himachal across the 15,250 ft Rupin Pass.",
+    itinerary: [
+      { day: "Day 1", title: "Dehradun → Dhaula (200 km)", activities: ["Drive to Dhaula base", "Meet trek leader & briefing", "Camp overnight"], meals: "Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Dhaula → Sewa → Jhaka (Trek 12 km)", activities: ["Trek through pine forest", "Cross Sewa village", "Reach Jhaka - hanging village", "Camp near the village"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Jhaka → Saruwas Thach (Trek 9 km)", activities: ["Trek through forest & meadows", "Reach Saruwas Thach camp", "Views of surrounding peaks"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Saruwas Thach → Dhanderas Thach (Trek 6 km)", activities: ["Trek to the lower waterfall", "Reach Dhanderas Thach - waterfall camp", "Acclimatization"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Dhanderas Thach → Upper Waterfall → Rati Pheri (Trek 7 km)", activities: ["Climb beside the frozen waterfall", "Reach Rati Pheri camp (13,000 ft)", "Snow fields all around"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Rati Pheri → Rupin Pass → Ronti Gad (Trek 12 km)", activities: ["Early summit push to Rupin Pass (15,250 ft)", "Dramatic gully & snow traverse", "Descend to Ronti Gad camp in Himachal"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 7", title: "Ronti Gad → Sangla (Trek 10 km)", activities: ["Descend to Sangla valley", "Reach Sangla village", "Celebration dinner"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 8", title: "Sangla → Shimla", activities: ["Drive to Shimla", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade 4-season tents. Sleeping bags rated to -10°C. Sleeping mats & pillows. Crutches & gaiters for the snow. Porters/mules for luggage.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. High-energy packed meals for the pass day. Hot soup at camp.",
+  },
+  {
+    id: 23, title: "Pindari Glacier Trek", region: "Bageshwar, UK", difficulty: "Moderate", duration: "8D / 7N", altitude: "12,300 ft", bestTime: "Apr – Jun, Sep – Oct",
+    image: "/images/trek-pindari-glacier.jpg",
+    desc: "A classic Kumaon trek to the snout of the Pindari Glacier, passing through the Bhotia villages of the Pindar valley and Nanda Devi east views.",
+    itinerary: [
+      { day: "Day 1", title: "Kathgodam → Song (200 km)", activities: ["Drive to Song via Bageshwar", "Arrive trek base", "Rest & briefing"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Song → Loharkhet → Dhakuri (Trek 11 km)", activities: ["Trek to Loharkhet", "Continue to Dhakuri top camp", "Sunset views of Nanda Devi"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Dhakuri → Khati (Trek 8 km)", activities: ["Descend to the Pindar valley", "Reach Khati - largest Bhotia village", "Camp by the river"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Khati → Dwali (Trek 11 km)", activities: ["Trek along the Pindar river", "Reach Dwali camp", "Café break en route"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Dwali → Phurkia (Trek 5 km)", activities: ["Short ascent to Phurkia", "Rest & acclimatization", "Views of Nanda Khat"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Phurkia → Pindari Glacier → Phurkia (Trek 10 km)", activities: ["Trek to the Pindari Glacier snout", "Zero Point (12,300 ft)", "Views of Nanda Devi & Nanda Kot", "Return to Phurkia"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 7", title: "Phurkia → Dwali → Khati (Trek 16 km)", activities: ["Long descent to Khati", "Rest at the village camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 8", title: "Khati → Song → Kathgodam", activities: ["Trek back to Song", "Drive to Kathgodam", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "3-season tents with sleeping bags (-5°C). Sleeping mats. Dining tent with chairs. Porters/mules for camping equipment.",
+    mealsInfo: "All meals included – hot fresh camp food. 3 meals a day + tea/snacks. Local pahadi cuisine. Packed lunch for glacier day.",
+  },
+  {
+    id: 24, title: "Nag Tibba Trek", region: "Dehradun, UK", difficulty: "Easy", duration: "2D / 1N", altitude: "9,915 ft", bestTime: "All year",
+    image: "/images/trek-nag-tibba.jpg",
+    desc: "The perfect weekend trek from Delhi, climbing to the highest peak of the Nag Tibba range with views of Bandarpunch, Swargarohini and the Gangotri peaks.",
+    itinerary: [
+      { day: "Day 1", title: "Dehradun → Pantwari → Nag Tibba Base (Trek 4 km)", activities: ["Drive from Dehradun to Pantwari", "Trek to the base camp (4 km)", "Camp setup & bonfire"], meals: "Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Nag Tibba Summit & Return", activities: ["Early morning summit trek to Nag Tibba (9,915 ft)", "Panoramic Himalayan views", "Trek down to Pantwari", "Drive back to Dehradun"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Alpine tents with sleeping bags & mats. Bonfire arrangements. Basic toilet facilities at camp.",
+    mealsInfo: "Day 1: Dinner at camp (dal, rice, roti). Day 2: Breakfast. Tea & snacks available on the trail.",
+  },
+  {
+    id: 25, title: "Gaumukh Tapovan Trek", region: "Uttarkashi, UK", difficulty: "Challenging", duration: "7D / 6N", altitude: "14,600 ft", bestTime: "May – Jun, Sep – Oct",
+    image: "/images/trek-gaumukh-tapovan.jpg",
+    desc: "A soul-stirring trek to the source of the Ganga at Gaumukh and the meadows of Tapovan, sitting at the foot of the majestic Shivling peak.",
+    itinerary: [
+      { day: "Day 1", title: "Haridwar → Uttarkashi (170 km)", activities: ["Drive to Uttarkashi", "Kashi Vishwanath Temple visit", "Briefing & gear check"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Uttarkashi → Gangotri (100 km)", activities: ["Drive to Gangotri", "Gangotri Temple darshan", "Overnight at Gangotri"], meals: "Breakfast & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 3", title: "Gangotri → Chirbasa (Trek 9 km)", activities: ["Trek along the Bhagirathi gorge", "Reach Chirbasa camp", "First views of the Bhagirathi peaks"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Chirbasa → Bhojbasa (Trek 5 km)", activities: ["Trek to Bhojbasa meadow", "Shivling peak views", "Rest & acclimatization"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Bhojbasa → Gaumukh → Tapovan (Trek 10 km)", activities: ["Trek to Gaumukh - the glacier snout of the Ganga", "Ascend to Tapovan meadow (14,600 ft)", "Views of Shivling & Bhagirathi peaks", "Camp at Tapovan"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Tapovan → Bhojbasa → Chirbasa (Trek 15 km)", activities: ["Descend to Bhojbasa", "Continue to Chirbasa camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 7", title: "Chirbasa → Gangotri → Haridwar", activities: ["Trek back to Gangotri", "Drive to Haridwar", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade tents for high altitude. Sleeping bags (-15°C rated). Sleeping mats & pillows. Dining tent. Porters/mules for luggage.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. High-energy packed meals for glacier day. Hot drinks at camp.",
+  },
+  {
+    id: 26, title: "Baijnath & Dodital Trek", region: "Uttarkashi, UK", difficulty: "Moderate", duration: "5D / 4N", altitude: "10,800 ft", bestTime: "Apr – Jun, Sep – Nov",
+    image: "/images/trek-dodital.jpg",
+    desc: "A serene trek to the pristine Dodital lake, set in oak and rhododendron forest and home to the rare Himalayan golden mahseer and the ancient Ganesh temple.",
+    itinerary: [
+      { day: "Day 1", title: "Dehradun → Sangam Chatti (Trek 7 km)", activities: ["Drive from Dehradun to Sangam Chatti", "Trek to Agoda camp (7 km)", "Riverside camp & bonfire"], meals: "Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Agoda → Dodital (Trek 9 km)", activities: ["Trek through dense forest", "Reach Dodital lake camp (10,800 ft)", "Visit the Ganesh temple"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Dodital Exploration", activities: ["Sunrise over the lake", "Nature walk around the lake", "Bird watching & photography", "Rest at camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Dodital → Agoda → Sangam Chatti (Trek 16 km)", activities: ["Trek back to Sangam Chatti", "Overnight at guesthouse"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 5", title: "Sangam Chatti → Dehradun", activities: ["Drive back to Dehradun", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "3-season tents with sleeping bags & mats. Dining tent with chairs. Toilet tent at campsite. Porters for camping gear.",
+    mealsInfo: "All meals included – hot fresh camp food. 3 meals a day + tea/snacks. Local pahadi cuisine. Packed lunch for long days.",
+  },
+  {
+    id: 27, title: "Roopkund Trek", region: "Chamoli, UK", difficulty: "Challenging", duration: "8D / 7N", altitude: "15,750 ft", bestTime: "May – Jun, Sep – Oct",
+    image: "/images/trek-roopkund.jpg",
+    desc: "The legendary mystery lake of the Himalayas, known for its ancient human skeletons, reached over high ridges with views of Trishul and Nanda Ghunti.",
+    itinerary: [
+      { day: "Day 1", title: "Kathgodam → Lohajung (230 km)", activities: ["Drive to Lohajung", "Arrive trek base", "Briefing & rest"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Lohajung → Wan → Didna (Trek 5 km)", activities: ["Drive to Wan village", "Trek to Didna village camp", "Oak & rhododendron forests"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Didna → Ali Bugyal → Bedni Bugyal (Trek 9 km)", activities: ["Climb to Ali Bugyal meadow", "Reach Bedni Bugyal - largest meadow", "Camp with Trishul views"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Bedni Bugyal → Pathar Nachauni (Trek 5 km)", activities: ["Trek to Patar Nachauni camp", "Views of Nanda Ghunti & Trishul", "Acclimatization"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Patar Nachauni → Bhagwabasa (Trek 5 km)", activities: ["Trek above the treeline", "Reach Bhagwabasa camp (14,100 ft)", "Cold, high-altitude camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Bhagwabasa → Roopkund → Patar Nachauni (Trek 10 km)", activities: ["Early summit push to Roopkund (15,750 ft)", "The mystery skeleton lake", "Descend to Patar Nachauni"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 7", title: "Patar Nachauni → Wan (Trek 14 km)", activities: ["Descend through Bedni Bugyal", "Reach Wan village", "Overnight at Lohajung"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 8", title: "Lohajung → Kathgodam", activities: ["Drive back to Kathgodam", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade 4-season tents. Sleeping bags (-10°C rated). Sleeping mats & pillows. Dining tent. Crutches & gaiters for snow. Porters/mules.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. High-energy packed meals for summit day. Hot soup & drinks at camp.",
+  },
+  {
+    id: 28, title: "Jogini Waterfall Trek", region: "Manali, HP", difficulty: "Easy", duration: "2D / 1N", altitude: "8,900 ft", bestTime: "Mar – Nov",
+    image: "/images/trek-jogini-waterfall.jpg",
+    desc: "A short and scenic walk from Vashisht to the beautiful Jogini Waterfall, passing apple orchards and traditional Himachali villages.",
+    itinerary: [
+      { day: "Day 1", title: "Vashisht → Jogini Falls → Vashisht", activities: ["Start from Vashisht hot springs", "Trek through orchards & villages", "Reach Jogini Waterfall (4 km)", "Return to Vashisht"], meals: "Lunch & Dinner", stay: "Guesthouse" },
+      { day: "Day 2", title: "Vashisht → Manali", activities: ["Morning at leisure", "Visit old Manali cafés", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "No camping; stay in Vashisht/Manali guesthouses. Comfortable rooms with attached baths. Advance booking recommended in season.",
+    mealsInfo: "Meals at local cafés & guesthouse. Fresh pahadi food – dal, rice, roti, sabzi, tea. Packed snacks for the walk.",
+  },
+  {
+    id: 29, title: "Bijli Mahadev Trek", region: "Kullu, HP", difficulty: "Easy", duration: "2D / 1N", altitude: "8,000 ft", bestTime: "Mar – Nov",
+    image: "/images/trek-bijli-mahadev.jpg",
+    desc: "A short pilgrimage trek from Kullu to the ancient Bijli Mahadev temple, famous for its 60 ft flagpole struck by lightning, with sweeping valley views.",
+    itinerary: [
+      { day: "Day 1", title: "Kullu → Chansari → Bijli Mahadev", activities: ["Drive from Kullu to Chansari (20 km)", "Trek to Bijli Mahadev temple (2 km)", "Temple darshan & valley views", "Return to Kullu"], meals: "Lunch & Dinner", stay: "Guesthouse" },
+      { day: "Day 2", title: "Kullu Local", activities: ["Visit Kullu temples & shawl factories", "Free time & departure", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "No camping; overnight in Kullu guesthouse/hotel. Basic comfortable rooms with attached bathrooms.",
+    mealsInfo: "Meals at local dhabas & hotel. Simple pahadi food. Tea and snacks available near the temple.",
+  },
+  {
+    id: 30, title: "Serolsar Lake Trek", region: "Jibhi, HP", difficulty: "Easy", duration: "2D / 1N", altitude: "10,200 ft", bestTime: "Apr – Nov",
+    image: "/images/trek-serolsar-lake.jpg",
+    desc: "A gentle forest walk from Jalori Pass to the sacred Serolsar Lake, tucked among oak and rhododendron woods with the Budhi Nagin temple beside it.",
+    itinerary: [
+      { day: "Day 1", title: "Jibhi → Jalori Pass → Serolsar Lake", activities: ["Drive from Jibhi to Jalori Pass (3,120 m)", "Trek to Serolsar Lake (5 km)", "Visit Budhi Nagin temple", "Return to Jibhi"], meals: "Lunch & Dinner", stay: "Guesthouse" },
+      { day: "Day 2", title: "Jibhi → Departure", activities: ["Morning at Jibhi waterfall", "Free time & departure", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "No camping; stay in Jibhi cottages/guesthouses. Wooden cottages with river views. Advance booking recommended.",
+    mealsInfo: "Meals at Jibhi cafés & guesthouse. Continental and pahadi food. Tea & Maggi available near Jalori Pass.",
+  },
+  {
+    id: 31, title: "Rajgundha Trek", region: "Barot, HP", difficulty: "Moderate", duration: "3D / 2N", altitude: "8,200 ft", bestTime: "Apr – Jun, Sep – Nov",
+    image: "/images/trek-rajgundha.jpg",
+    desc: "A lovely offbeat trek through the Barot valley crossing the Billing ridge to the remote Rajgundha village, a hidden meadow settlement.",
+    itinerary: [
+      { day: "Day 1", title: "Barot → Lohardi (Drive) → Trek to Rajgundha", activities: ["Drive from Barot to Lohardi", "Trek to Rajgundha village (7 km)", "Camp at the village meadow"], meals: "Dinner", stay: "Tent" },
+      { day: "Day 2", title: "Rajgundha Exploration", activities: ["Explore Rajgundha & Kukkar Gunda", "Village life & river walk", "Sunset over the Dhauladhar", "Bonfire night"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Rajgundha → Billing → Barot", activities: ["Trek over to Billing (8 km)", "Drive back to Barot", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Alpine tents with sleeping bags & mats. Dining tent. Toilet tent at campsite. Porters for camping equipment.",
+    mealsInfo: "All meals included at camp. Freshly cooked pahadi food – dal, rice, roti, sabzi, tea. Packed lunch for trek days.",
+  },
+  {
+    id: 32, title: "Hatu Peak Trek", region: "Narkanda, HP", difficulty: "Easy", duration: "2D / 1N", altitude: "11,150 ft", bestTime: "Mar – Nov",
+    image: "/images/trek-hatu-peak.jpg",
+    desc: "A short trek from Narkanda to Hatu Peak, the highest point of the area, crowned by a wooden Hatu Mata temple and panoramic Himalaya views.",
+    itinerary: [
+      { day: "Day 1", title: "Narkanda → Hatu Peak → Narkanda", activities: ["Trek from Narkanda to Hatu Peak (7 km)", "Hatu Mata Temple darshan", "360° Himalayan views", "Return to Narkanda"], meals: "Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Narkanda Local & Departure", activities: ["Visit Tannu Jubbar Lake", "Apple orchard walk", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "No camping; overnight at Narkanda hotel/guesthouse. Heated rooms recommended in winter.",
+    mealsInfo: "Meals at Narkanda guesthouses & cafés. Fresh pahadi food. Packed snacks for the trek.",
+  },
+  {
+    id: 33, title: "Manimahesh Kailash Trek", region: "Chamba, HP", difficulty: "Challenging", duration: "6D / 5N", altitude: "13,000 ft", bestTime: "Jul – Sep",
+    image: "/images/trek-manimahesh-kailash.jpg",
+    desc: "A sacred pilgrimage trek to the Manimahesh Lake at the foot of the Manimahesh Kailash peak, revered as the abode of Lord Shiva.",
+    itinerary: [
+      { day: "Day 1", title: "Chamba → Bharmour (65 km)", activities: ["Drive to Bharmour", "Chaurasi Temple visit", "Briefing & overnight stay"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Bharmour → Hadsar (13 km)", activities: ["Drive to Hadsar road head", "Prepare for the trek", "Overnight at Hadsar"], meals: "Breakfast & Dinner", stay: "Tent/Guesthouse" },
+      { day: "Day 3", title: "Hadsar → Dhancho (Trek 7 km)", activities: ["Trek along the Manimahesh Ganga", "Reach Dhancho waterfalls camp", "Evening aarti"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Dhancho → Manimahesh Lake (Trek 6 km)", activities: ["Steep climb to Manimahesh Lake (13,000 ft)", "Holy dip & temple darshan", "Views of Manimahesh Kailash", "Camp near the lake"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Manimahesh → Dhancho → Hadsar (Trek 13 km)", activities: ["Descend to Hadsar", "Drive to Bharmour", "Rest"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 6", title: "Bharmour → Chamba", activities: ["Drive back to Chamba", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade tents. Sleeping bags (-5°C rated). Sleeping mats & pillows. Dining tent. Ponies available for luggage.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. Fresh camp-cooked food. Hot drinks at camp. Packed lunch for trek days.",
+  },
+  {
+    id: 34, title: "Sach Pass Trek", region: "Chamba, HP", difficulty: "Challenging", duration: "7D / 6N", altitude: "14,500 ft", bestTime: "Jun – Oct",
+    image: "/images/trek-sach-pass.jpg",
+    desc: "A thrilling crossover trek over the high Sach Pass, linking the Chamba and Pangi valleys through glaciers, meadows and remote Himalayan villages.",
+    itinerary: [
+      { day: "Day 1", title: "Chamba → Bairagarh (Drive)", activities: ["Drive from Chamba to Bairagarh", "Arrive trek base", "Briefing & gear check"], meals: "Dinner", stay: "Tent/Guesthouse" },
+      { day: "Day 2", title: "Bairagarh → Satrundi (Trek 8 km)", activities: ["Trek through forest & meadows", "Reach Satrundi camp", "Views of the Pangi range"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Satrundi → Sach Pass (Trek 8 km)", activities: ["Ascend to Sach Pass (14,500 ft)", "Snowfields & glacier views", "Camp near the pass"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Sach Pass → Bagotu (Trek 10 km)", activities: ["Descend into the Pangi valley", "Reach Bagotu village camp", "Experience Pangi culture"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Bagotu → Killar (Trek/Drive)", activities: ["Trek towards Killar", "Drive to Killar town", "Overnight stay"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 6", title: "Killar → Chamba (Drive)", activities: ["Scenic drive back to Chamba", "Rest & local visit"], meals: "Breakfast & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 7", title: "Chamba → Departure", activities: ["Chamba sightseeing", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade 4-season tents. Sleeping bags (-10°C rated). Sleeping mats. Dining tent. Porters/mules for luggage.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. Fresh camp-cooked food. Packed lunch for pass day. Hot drinks at camp.",
+  },
+  {
+    id: 35, title: "Pin Parvati Pass Trek", region: "Kullu, HP", difficulty: "Challenging", duration: "11D / 10N", altitude: "17,450 ft", bestTime: "Jul – Sep",
+    image: "/images/trek-pin-parvati-pass.jpg",
+    desc: "One of India's most demanding and spectacular treks, crossing the 17,450 ft Pin Parvati Pass from the green Parvati valley into the barren Pin valley of Spiti.",
+    itinerary: [
+      { day: "Day 1", title: "Manali → Kasol (Drive)", activities: ["Drive to Kasol", "Briefing & gear check", "Overnight at Kasol"], meals: "Dinner", stay: "Guesthouse" },
+      { day: "Day 2", title: "Kasol → Kheerganga (Trek 12 km)", activities: ["Trek to Kheerganga", "Hot springs at camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Kheerganga → Tunda Bhuj (Trek 10 km)", activities: ["Trek through Parvati valley", "Reach Tunda Bhuj camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Tunda Bhuj → Thakur Kuan (Trek 11 km)", activities: ["Cross alpine meadows", "Reach Thakur Kuan camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Thakur Kuan → Odi Thach (Trek 9 km)", activities: ["Trek along the Parvati river", "Cross natural rock bridges", "Reach Odi Thach camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Odi Thach → Mantalai Lake (Trek 8 km)", activities: ["Trek to the sacred Mantalai Lake", "Source of the Parvati river", "Camp at the lake"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 7", title: "Mantalai → Pin Parvati Base (Trek 8 km)", activities: ["Ascend towards the pass", "Set up high camp (16,000 ft)", "Early night for summit day"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 8", title: "Base → Pin Parvati Pass → Glacier Camp (Trek 14 km)", activities: ["Summit the Pin Parvati Pass (17,450 ft)", "Dramatic glacier crossing", "Descend to glacier camp in Pin valley"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 9", title: "Glacier Camp → Mudh Village (Trek 12 km)", activities: ["Descend through the Pin valley", "Reach Mudh village", "Meet Spitian culture"], meals: "Breakfast, Lunch & Dinner", stay: "Homestay" },
+      { day: "Day 10", title: "Mudh → Kaza → Manali (Drive)", activities: ["Drive to Kaza", "Continue to Manali over Kunzum/Atal", "Overnight at Manali"], meals: "Breakfast & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 11", title: "Manali → Departure", activities: ["Free time at Manali", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade 4-season tents for the glacier section. Sleeping bags (-15°C rated). Crampons, ropes & gaiters provided. Porters/mules for luggage.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. High-energy packed meals for glacier days. Hot soup at camp.",
+  },
+  {
+    id: 36, title: "Chandranahan Lake Trek", region: "Kinnaur, HP", difficulty: "Moderate", duration: "4D / 3N", altitude: "14,000 ft", bestTime: "Jun – Sep",
+    image: "/images/trek-chandranahan-lake.jpg",
+    desc: "A little-known trek in the Kinnaur region to the pristine Chandranahan lakes, hidden below the Kinner Kailash range amid alpine meadows.",
+    itinerary: [
+      { day: "Day 1", title: "Shimla → Kalpa (Drive 250 km)", activities: ["Drive to Kalpa via Kinnaur gate", "Arrive Kalpa - Kinner Kailash views", "Briefing & overnight stay"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Kalpa → Tangling → Forest Camp (Trek 8 km)", activities: ["Drive to Tangling village", "Trek through oak & pine forest", "Reach forest camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Forest Camp → Chandranahan Lake (Trek 8 km)", activities: ["Ascend to Chandranahan lakes", "Alpine meadows & glacial tarns", "Views of Kinner Kailash", "Return to camp"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Camp → Tangling → Shimla", activities: ["Trek back to Tangling", "Drive to Shimla", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "3-season tents with sleeping bags (-5°C). Sleeping mats & pillows. Dining tent. Porters for camping gear.",
+    mealsInfo: "All meals included – hot fresh camp food. 3 meals a day + tea/snacks. Local Kinnauri cuisine. Packed lunch for the lake day.",
+  },
+  {
+    id: 37, title: "Satopanth Tal Trek", region: "Uttarkashi, UK", difficulty: "Challenging", duration: "8D / 7N", altitude: "15,100 ft", bestTime: "May – Jun, Sep – Oct",
+    image: "/images/trek-satopanth-tal.jpg",
+    desc: "A high-altitude trek to the holy triangular Satopanth Lake near the source of the Alaknanda, with grandstand views of Neelkanth and Balakun peaks.",
+    itinerary: [
+      { day: "Day 1", title: "Haridwar → Joshimath (Drive)", activities: ["Drive via Devprayag & Rudraprayag", "Arrive Joshimath", "Briefing & gear check"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Joshimath → Badrinath → Mana (Drive/Trek)", activities: ["Drive to Badrinath & Mana village", "Trek to Vasudhara falls", "Overnight at Mana/Badrinath"], meals: "Breakfast & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 3", title: "Mana → Laxmi Van (Trek 8 km)", activities: ["Trek along the Alaknanda", "Reach Laxmi Van forest camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Laxmi Van → Chakrateerth (Trek 8 km)", activities: ["Ascend through boulders & moraines", "Reach Chakrateerth camp", "Neelkanth peak views"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Chakrateerth → Satopanth Tal (Trek 6 km)", activities: ["Trek to Satopanth Lake (15,100 ft)", "Holy triangular glacial lake", "Views of Neelkanth & Balakun", "Camp by the lake"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Satopanth → Chakrateerth (Trek 6 km)", activities: ["Sunrise over the lake", "Descend to Chakrateerth"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 7", title: "Chakrateerth → Mana → Badrinath (Trek 16 km)", activities: ["Trek back to Mana", "Drive to Badrinath", "Rest & temple visit"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 8", title: "Badrinath → Haridwar", activities: ["Drive back to Haridwar", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade 4-season tents. Sleeping bags (-10°C rated). Sleeping mats & pillows. Dining tent. Porters/mules for luggage.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. High-energy packed meals for the lake day. Hot soup at camp.",
+  },
+  {
+    id: 38, title: "Kedartal Trek", region: "Uttarkashi, UK", difficulty: "Challenging", duration: "7D / 6N", altitude: "15,500 ft", bestTime: "May – Jun, Sep – Oct",
+    image: "/images/trek-kedartal.jpg",
+    desc: "A demanding trek from Gangotri to the emerald Kedartal lake beneath the majestic Thalay Sagar peak, through rugged moraines and glacial streams.",
+    itinerary: [
+      { day: "Day 1", title: "Haridwar → Gangotri (Drive)", activities: ["Drive to Gangotri via Uttarkashi", "Gangotri Temple darshan", "Briefing & overnight stay"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Gangotri → Bhojkharak (Trek 8 km)", activities: ["Cross the Bhagirathi river", "Steep climb to Bhojkharak camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Bhojkharak → Kedar Kharak (Trek 8 km)", activities: ["Trek through boulder fields", "Reach Kedar Kharak camp (14,000 ft)"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Kedar Kharak → Kedartal (Trek 5 km)", activities: ["Ascend to Kedartal Lake (15,500 ft)", "Views of Thalay Sagar & Bhrigupanth", "Camp by the lake"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Kedartal → Kedar Kharak (Trek 5 km)", activities: ["Sunrise over Kedartal", "Descend to Kedar Kharak"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Kedar Kharak → Gangotri (Trek 16 km)", activities: ["Long descent to Gangotri", "Rest & local visit"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 7", title: "Gangotri → Haridwar", activities: ["Drive back to Haridwar", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade 4-season tents. Sleeping bags (-10°C rated). Sleeping mats & pillows. Dining tent. Porters/mules for luggage.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. High-energy packed meals for the lake day. Hot soup at camp.",
+  },
+  {
+    id: 39, title: "Milam Glacier Trek", region: "Munsiyari, UK", difficulty: "Challenging", duration: "9D / 8N", altitude: "13,500 ft", bestTime: "May – Jun, Sep – Oct",
+    image: "/images/trek-milam-glacier.jpg",
+    desc: "A remote Kumaon expedition to the Milam Glacier, following the Goriganga through the traditional Bhotia villages of the Johar valley.",
+    itinerary: [
+      { day: "Day 1", title: "Kathgodam → Munsiyari (Drive)", activities: ["Drive to Munsiyari via Almora", "Arrive trek base", "Briefing & gear check"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Munsiyari → Lilam (Trek/Drive 12 km)", activities: ["Trek/drive to Lilam", "Goriganga river walk", "Camp overnight"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Lilam → Bogdiyar (Trek 12 km)", activities: ["Trek along the Goriganga", "Reach Bogdiyar camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Bogdiyar → Rilkot (Trek 12 km)", activities: ["Cross the Nain Singh Rawat memorial", "Reach Rilkot village camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Rilkot → Milam Village (Trek 10 km)", activities: ["Trek to Milam village", "Old Bhotia settlement & temple", "Camp near the village"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Milam → Milam Glacier → Milam (Trek 10 km)", activities: ["Trek to the Milam Glacier snout", "Views of Nanda Devi east & Trishuli", "Return to Milam camp"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 7", title: "Milam → Rilkot (Trek 10 km)", activities: ["Descend to Rilkot camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 8", title: "Rilkot → Lilam → Munsiyari (Trek 24 km)", activities: ["Long descent to Lilam", "Drive to Munsiyari", "Rest"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 9", title: "Munsiyari → Kathgodam", activities: ["Drive back to Kathgodam", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade tents. Sleeping bags (-10°C rated). Sleeping mats. Dining tent. Porters/mules for luggage. Inner-line permits required.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. Fresh camp-cooked food. Local Bhotia cuisine. Packed lunch for glacier day.",
+  },
+  {
+    id: 40, title: "Nanda Devi Base Camp Trek", region: "Chamoli, UK", difficulty: "Challenging", duration: "10D / 9N", altitude: "13,500 ft", bestTime: "Jun – Sep",
+    image: "/images/trek-nanda-devi-base.jpg",
+    desc: "A serious expedition-style trek into the Nanda Devi sanctuary approach through the Rishiganga and Dhauliganga valleys, with views of India's second-highest peak.",
+    itinerary: [
+      { day: "Day 1", title: "Haridwar → Joshimath (Drive)", activities: ["Drive via Devprayag & Rudraprayag", "Arrive Joshimath", "Briefing & gear check"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Joshimath → Lata Village (Drive/Trek)", activities: ["Drive to Lata village", "Lata temple & village walk", "Overnight at Lata"], meals: "Breakfast & Dinner", stay: "Guesthouse/Tent" },
+      { day: "Day 3", title: "Lata → Lata Kharak (Trek 9 km)", activities: ["Steep climb through forest", "Reach Lata Kharak camp (12,000 ft)"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Lata Kharak → Dharansi Pass (Trek 8 km)", activities: ["Trek over the Dharansi Pass", "Views of Nanda Devi & Dunagiri", "Camp at Dharansi"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Dharansi → Deodi (Trek 10 km)", activities: ["Descend to the Rishiganga valley", "Reach Deodi camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Deodi → Ramani (Trek 8 km)", activities: ["Trek upstream along the Rishiganga", "Reach Ramani camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 7", title: "Ramani → Nanda Devi Base (Trek 8 km)", activities: ["Trek to the Nanda Devi base camp ruins", "Grand views of the sanctuary", "Return to Ramani"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 8", title: "Ramani → Deodi → Dharansi (Trek 15 km)", activities: ["Descend & climb back to Dharansi"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 9", title: "Dharansi → Lata Kharak → Lata (Trek 14 km)", activities: ["Trek back to Lata village", "Rest at guesthouse"], meals: "Breakfast, Lunch & Dinner", stay: "Guesthouse" },
+      { day: "Day 10", title: "Lata → Haridwar", activities: ["Drive back to Haridwar", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "Expedition-grade 4-season tents. Sleeping bags (-10°C rated). Sleeping mats. Dining tent. Porters/mules. Inner-line permits required.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. Fresh camp-cooked food. High-energy packed meals. Hot soup at camp.",
+  },
+  {
+    id: 41, title: "Pangarchulla Peak Trek", region: "Joshimath, UK", difficulty: "Challenging", duration: "6D / 5N", altitude: "15,069 ft", bestTime: "Mar – Jun, Sep – Dec",
+    image: "/images/trek-pangarchulla-peak.jpg",
+    desc: "A thrilling summit trek near Auli to Pangarchulla Peak, combining meadows, forests and a steep snow climb with a grand panorama of Nanda Devi and Dronagiri.",
+    itinerary: [
+      { day: "Day 1", title: "Haridwar → Joshimath (Drive)", activities: ["Drive to Joshimath", "Briefing & gear check"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Joshimath → Dhak → Gulling (Trek 8 km)", activities: ["Drive to Dhak village", "Trek through forest to Gulling camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Gulling → Khullara (Trek 6 km)", activities: ["Ascend through meadows", "Reach Khullara camp (11,000 ft)"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Khullara → Pangarchulla Summit → Khullara (Trek 10 km)", activities: ["Early summit push to Pangarchulla (15,069 ft)", "Steep snow climb & ridge walk", "360° Himalayan views", "Return to Khullara"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Khullara → Dhak → Joshimath (Trek 8 km)", activities: ["Descend to Dhak village", "Drive to Joshimath", "Rest & local visit"], meals: "Breakfast, Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 6", title: "Joshimath → Haridwar", activities: ["Drive back to Haridwar", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "3-season tents with sleeping bags (-10°C). Sleeping mats & pillows. Dining tent. Crampons & gaiters provided for the summit. Porters for gear.",
+    mealsInfo: "All meals included – 3 meals a day + tea/snacks. High-energy packed meals for summit day. Hot soup at camp.",
+  },
+  {
+    id: 42, title: "Auli Gorson Bugyal Trek", region: "Auli, UK", difficulty: "Easy", duration: "3D / 2N", altitude: "11,500 ft", bestTime: "Mar – Jun, Sep – Dec",
+    image: "/images/trek-auli-gorson-bugyal.jpg",
+    desc: "A gentle meadow trek from Auli to the Gorson Bugyal alpine meadow, with close-up views of Nanda Devi, Trishul and the Auli ski slopes.",
+    itinerary: [
+      { day: "Day 1", title: "Rishikesh → Joshimath → Auli (Drive)", activities: ["Drive to Auli via Joshimath", "Cable car ride to Auli", "Overnight at Auli"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Auli → Gorson Bugyal (Trek 6 km)", activities: ["Trek through oak forest", "Reach Gorson Bugyal meadow", "Nanda Devi & Trishul views", "Return to Auli"], meals: "Breakfast, Packed Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 3", title: "Auli → Rishikesh", activities: ["Morning at Auli lake", "Drive back to Rishikesh", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "No camping; stay at Auli hotels/guesthouses. Heated rooms recommended in winter. Cable car tokens extra.",
+    mealsInfo: "Meals at Auli hotels & cafés. Fresh pahadi and continental food. Packed lunch for the meadow trek.",
+  },
+  {
+    id: 43, title: "Ruinsara Tal Trek", region: "Uttarkashi, UK", difficulty: "Moderate", duration: "7D / 6N", altitude: "11,800 ft", bestTime: "May – Jun, Sep – Oct",
+    image: "/images/trek-ruinsara-tal.jpg",
+    desc: "A beautiful trek through the Har Ki Dun valley onwards to the serene Ruinsara Lake, a high meadow camp beneath the Black Peak and Swargarohini.",
+    itinerary: [
+      { day: "Day 1", title: "Dehradun → Sankri (Drive)", activities: ["Drive to Sankri via Mussoorie", "Arrive trek base", "Briefing & overnight stay"], meals: "Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Sankri → Taluka (Trek 10 km)", activities: ["Trek to Taluka village", "Cross the Supin river", "Camp at Taluka"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 3", title: "Taluka → Osla (Trek 8 km)", activities: ["Trek to ancient Osla village", "Village walk & homestay culture", "Camp near the village"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 4", title: "Osla → Ruinsara Tal (Trek 9 km)", activities: ["Trek through forest & meadows", "Reach Ruinsara Tal (11,800 ft)", "Camp by the lake"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 5", title: "Ruinsara Tal Exploration", activities: ["Explore the lake & surroundings", "Black Peak & Swargarohini views", "Waterfall walk", "Bonfire at camp"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 6", title: "Ruinsara Tal → Osla → Seema (Trek 14 km)", activities: ["Descend to Osla", "Continue to Seema/road head"], meals: "Breakfast, Lunch & Dinner", stay: "Tent" },
+      { day: "Day 7", title: "Seema → Dehradun", activities: ["Drive back to Dehradun", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "3-season tents with sleeping bags (-5°C). Sleeping mats & pillows. Dining tent. Porters/mules for camping equipment.",
+    mealsInfo: "All meals included – hot fresh camp food. 3 meals a day + tea/snacks. Local pahadi cuisine. Packed lunch for long days.",
+  },
+  {
+    id: 44, title: "Binsar Zero Point Trek", region: "Almora, UK", difficulty: "Easy", duration: "2D / 1N", altitude: "7,900 ft", bestTime: "All year",
+    image: "/images/trek-binsar-zero-point.jpg",
+    desc: "A relaxed forest walk through the Binsar Wildlife Sanctuary to Zero Point, offering a magnificent sunrise panorama of the central Himalayan peaks.",
+    itinerary: [
+      { day: "Day 1", title: "Almora → Binsar (Drive)", activities: ["Drive from Almora to Binsar (30 km)", "Forest walk in the sanctuary", "Overnight at Binsar"], meals: "Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Binsar → Zero Point → Almora", activities: ["Early walk to Zero Point", "Sunrise over Nanda Devi & Panchachuli", "Return & drive to Almora", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "No camping; stay at Binsar forest rest house/guesthouse. Advance booking essential for forest lodges.",
+    mealsInfo: "Meals at Binsar guesthouses & cafés. Simple pahadi food. Packed breakfast snacks for the sunrise walk.",
+  },
+  {
+    id: 45, title: "Surkanda Devi Trek", region: "Dhanaulti, UK", difficulty: "Easy", duration: "2D / 1N", altitude: "9,000 ft", bestTime: "All year",
+    image: "/images/trek-surkanda-devi.jpg",
+    desc: "A short trek from Kaddukhal to the Surkanda Devi temple, perched on a ridge with sweeping views of the Doon valley and Greater Himalayan peaks.",
+    itinerary: [
+      { day: "Day 1", title: "Dehradun → Dhanaulti → Kaddukhal", activities: ["Drive to Dhanaulti (60 km)", "Eco park visit & forest walk", "Overnight at Dhanaulti"], meals: "Lunch & Dinner", stay: "Hotel/Guesthouse" },
+      { day: "Day 2", title: "Kaddukhal → Surkanda Devi → Dehradun", activities: ["Drive to Kaddukhal base", "Trek to Surkanda Devi temple (1.5 km)", "Darshan & Doon valley views", "Drive back to Dehradun", "Tour ends"], meals: "Breakfast", stay: "-" },
+    ],
+    tentInfo: "No camping; stay at Dhanaulti hotels/guesthouses. Wooden cottages and forest resorts available.",
+    mealsInfo: "Meals at Dhanaulti restaurants. Simple North Indian food. Tea & snacks available near the base.",
+  },
 ];
 
 const difficulties = ["All", "Easy", "Moderate", "Challenging", "Hard"];
@@ -176,12 +644,12 @@ const diffColor = { Easy: "text-green-600 bg-green-50", Moderate: "text-amber-60
 const Treks = () => {
   const [diffFilter, setDiffFilter] = useState("All");
   const [regionFilter, setRegionFilter] = useState("All");
-  const [search, setSearch] = useState("");
+  const [search] = useState("");
   const [expanded, setExpanded] = useState<number | null>(null);
 
   const filtered = allTreks.filter((t) => {
     const matchDiff = diffFilter === "All" || t.difficulty === diffFilter;
-    const matchRegion = regionFilter === "All" || (regionFilter === "HP" && t.region.includes("HP")) || (regionFilter === "UK" && t.region.includes("UK"));
+    const matchRegion = regionFilter === "All" || (regionFilter === "HP" && t.region.includes("HP")) || (regionFilter === "UK" && (t.region.includes("UK") || t.region.includes("Uttarakhand")));
     const matchSearch = t.title.toLowerCase().includes(search.toLowerCase()) || t.region.toLowerCase().includes(search.toLowerCase());
     return matchDiff && matchRegion && matchSearch;
   });
@@ -209,10 +677,10 @@ const Treks = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
-        <div className="bg-white dark:bg-[#1a1a2e] rounded-2xl shadow-lg p-4 flex items-center gap-3 mb-6 border border-gray-100 dark:border-gray-700">
+        {/* <div className="bg-white dark:bg-[#1a1a2e] rounded-2xl shadow-lg p-4 flex items-center gap-3 mb-6 border border-gray-100 dark:border-gray-700">
           <Search size={20} className="text-gray-400 dark:text-gray-500 shrink-0" />
           <input type="text" placeholder="Search treks by name or region..." value={search} onChange={(e) => setSearch(e.target.value)} className="flex-1 bg-transparent text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none text-sm" />
-        </div>
+        </div> */}
 
         <div className="flex flex-wrap gap-2 mb-4">
           {regions.map((r) => (
@@ -234,33 +702,39 @@ const Treks = () => {
           ))}
         </div>
 
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map((trek, i) => {
             const isOpen = expanded === trek.id;
             return (
-              <motion.div key={trek.id} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}
-                className="bg-white dark:bg-[#1a1a2e] rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
-                <div className="flex flex-col md:flex-row">
-                  <div className="relative w-full md:w-80 h-56 md:h-auto shrink-0 overflow-hidden">
-                    <img src={trek.image} alt={trek.title} className="w-full h-full object-cover" />
-                    <span className={`absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold ${diffColor[trek.difficulty]}`}>{trek.difficulty}</span>
+              <Fragment key={trek.id}>
+                <motion.article initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }} className="card group flex flex-col">
+                  <div className="relative h-56 overflow-hidden">
+                    <img src={trek.image} alt={trek.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <span className="absolute top-3 left-3 bg-[#b8860b] text-white text-xs font-semibold px-3 py-1 rounded-full">{trek.altitude}</span>
+                    <span className={`absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold ${diffColor[trek.difficulty]}`}>
+                      <Mountain size={11} /> {trek.difficulty}
+                    </span>
                     <div className="absolute bottom-3 left-3 flex items-center gap-1 text-white text-xs font-medium bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                      <MapPin size={11} /> {trek.region}
+                      <MapPin size={12} /> {trek.region}
                     </div>
                   </div>
-                  <div className="flex-1 p-5 md:p-6">
-                    <div className="flex items-start justify-between mb-2">
-                      <h3 className="font-bold text-gray-900 dark:text-gray-100 text-xl">{trek.title}</h3>
-                      <span className="text-xs text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-800 px-2.5 py-1 rounded-full shrink-0 ml-2">{trek.altitude}</span>
-                    </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-[#b8860b] transition-colors">{trek.title}</h3>
                     <div className="flex flex-wrap gap-3 text-xs text-gray-500 dark:text-gray-400 mb-3">
                       <span className="flex items-center gap-1"><Clock size={12} /> {trek.duration}</span>
                       <span className="flex items-center gap-1"><TrendingUp size={12} /> {trek.altitude}</span>
                       <span className="flex items-center gap-1"><Calendar size={12} /> {trek.bestTime}</span>
                     </div>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{trek.desc}</p>
-
-                    <div className="flex flex-wrap gap-3 mb-4">
+                    <ul className="space-y-1.5 mb-4">
+                      {trek.itinerary.slice(0, 3).map((day) => (
+                        <li key={day.day} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                          <CheckCircle2 size={13} className="text-green-500 mt-0.5 shrink-0" /> {day.day} · {day.title}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-2 mb-4">
                       <div className="flex items-center gap-1.5 text-xs bg-amber-50 dark:bg-amber-900/20 text-amber-700 px-3 py-1.5 rounded-full font-medium">
                         <UtensilsCrossed size={12} /> Meals Included
                       </div>
@@ -268,68 +742,60 @@ const Treks = () => {
                         <Tent size={12} /> {trek.tentInfo.split('.')[0]}
                       </div>
                     </div>
-
-                    <div className="flex items-center gap-3">
-                      <button onClick={() => handleEnquire(trek)}
-                        className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#25D366] text-white text-sm font-semibold hover:bg-[#20BD5A] transition-all">
-                        <MessageCircle size={14} /> Enquire on WhatsApp
+                    <div className="mt-auto flex items-center justify-between gap-3 pt-4 border-t border-gray-100 dark:border-gray-700">
+                      <button onClick={() => handleEnquire(trek)} className="flex items-center gap-1.5 text-[#25D366] text-sm font-semibold hover:underline">
+                        <MessageCircle size={14} /> Enquire
                       </button>
-                      <button onClick={() => setExpanded(isOpen ? null : trek.id)}
-                        className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 text-sm font-semibold hover:border-[#b8860b] hover:text-[#b8860b] transition-all">
-                        {isOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-                        {isOpen ? "Hide Details" : "Full Itinerary & Meals"}
+                      <button onClick={() => setExpanded(isOpen ? null : trek.id)} className="btn-primary text-sm !py-2.5 !px-5">
+                        {isOpen ? "Hide" : "Itinerary"} {isOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                       </button>
                     </div>
                   </div>
-                </div>
+                </motion.article>
 
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }} className="overflow-hidden">
-                      <div className="border-t border-gray-100 dark:border-gray-700 p-5 md:p-6 space-y-6">
-                        {/* Day-by-day itinerary */}
-                        <div>
-                          <h4 className="font-bold text-gray-900 dark:text-gray-100 text-lg mb-4">Day-by-Day Itinerary</h4>
-                          <div className="space-y-3">
-                            {trek.itinerary.map((day, j) => (
-                              <div key={j} className="flex gap-4">
-                                <div className="flex flex-col items-center">
-                                  <div className="w-9 h-9 rounded-full bg-[#b8860b] text-white flex items-center justify-center text-xs font-bold shrink-0">
-                                    {day.day.replace("Day ", "")}
-                                  </div>
-                                  {j < trek.itinerary.length - 1 && <div className="w-0.5 flex-1 bg-[#b8860b]/20 mt-1" />}
+                      transition={{ duration: 0.3 }} className="overflow-hidden md:col-span-2 lg:col-span-3">
+                      <div className="bg-white dark:bg-[#1a1a2e] rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 md:p-6 space-y-6">
+                        <div className="flex items-start justify-between gap-3">
+                          <h4 className="font-bold text-gray-900 dark:text-gray-100 text-lg">{trek.title} — Day-by-Day Itinerary</h4>
+                          <button onClick={() => setExpanded(null)} className="text-gray-400 hover:text-[#b8860b] text-sm font-semibold shrink-0">Close</button>
+                        </div>
+                        <div className="space-y-3">
+                          {trek.itinerary.map((day, j) => (
+                            <div key={j} className="flex gap-4">
+                              <div className="flex flex-col items-center">
+                                <div className="w-9 h-9 rounded-full bg-[#b8860b] text-white flex items-center justify-center text-xs font-bold shrink-0">
+                                  {day.day.replace("Day ", "")}
                                 </div>
-                                <div className="pb-3 flex-1">
-                                  <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
-                                    <h5 className="font-bold text-gray-900 dark:text-gray-100 text-sm">{day.title}</h5>
-                                    <ul className="mt-2 space-y-1">
-                                      {day.activities.map((act, k) => (
-                                          <li key={k} className="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
-                                          <span className="w-1.5 h-1.5 rounded-full bg-[#b8860b] mt-1.5 shrink-0" />{act}
-                                        </li>
-                                      ))}
-                                    </ul>
-                                    <div className="flex flex-wrap gap-2 mt-3">
-                                      <span className="text-xs text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded-full font-medium">🍽 {day.meals}</span>
-                                      {day.stay && day.stay !== "-" && (
-                                        <span className="text-xs text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded-full font-medium">🛏 {day.stay}</span>
-                                      )}
-                                    </div>
+                                {j < trek.itinerary.length - 1 && <div className="w-0.5 flex-1 bg-[#b8860b]/20 mt-1" />}
+                              </div>
+                              <div className="pb-3 flex-1">
+                                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+                                  <h5 className="font-bold text-gray-900 dark:text-gray-100 text-sm">{day.title}</h5>
+                                  <ul className="mt-2 space-y-1">
+                                    {day.activities.map((act, k) => (
+                                      <li key={k} className="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#b8860b] mt-1.5 shrink-0" />{act}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                  <div className="flex flex-wrap gap-2 mt-3">
+                                    <span className="text-xs text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded-full font-medium">🍽 {day.meals}</span>
+                                    {day.stay && day.stay !== "-" && (
+                                      <span className="text-xs text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded-full font-medium">🛏 {day.stay}</span>
+                                    )}
                                   </div>
                                 </div>
                               </div>
-                            ))}
-                          </div>
+                            </div>
+                          ))}
                         </div>
-
-                        {/* Meals Info */}
                         <div className="bg-amber-50 dark:bg-amber-900/20 rounded-xl p-5">
                           <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-2"><UtensilsCrossed size={16} className="text-amber-600" /> Meals Information</h4>
                           <p className="text-sm text-gray-600 dark:text-gray-400">{trek.mealsInfo}</p>
                         </div>
-
-                        {/* Tent/Stay Info */}
                         <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-5">
                           <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-2"><Tent size={16} className="text-blue-600" /> Tent & Accommodation</h4>
                           <p className="text-sm text-gray-600 dark:text-gray-400">{trek.tentInfo}</p>
@@ -338,7 +804,7 @@ const Treks = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </Fragment>
             );
           })}
         </div>
