@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
-const SITE_NAME = "HimQueenKing";
+const SITE_NAME = "HimKingQueen";
 const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80";
-const BASE_URL = "https://himqueenking.onrender.com";
+const BASE_URL = "https://himkingqueen.onrender.com";
 
 function setMeta(property: string, content: string, isName = false) {
   const attr = isName ? "name" : "property";

@@ -35,10 +35,10 @@ const Tours = () => {
   return (
     <>
       <SEO
-        title="Tour Packages — Shimla Manali, Spiti Valley, Leh Ladakh, Manali, Kasol | HimQueenKing"
+        title="Tour Packages — Shimla Manali, Spiti Valley, Leh Ladakh, Manali, Kasol | HimKingQueen"
         description="Explore our curated tour packages to Shimla Manali, Spiti Valley, Leh Ladakh, Kasol, Rishikesh & more. Budget to luxury Himalaya tour packages with expert guides."
         keywords="shimla manali tour package, manali tour package, spiti valley tour, leh ladakh tour package, kasol backpacking trip, himachal pradesh tour packages, himalaya tour packages, shimla tour, rishikesh tour package, kedarnath yatra, tour packages 2026"
-        url="https://himqueenking.onrender.com/tours"
+        url="https://himkingqueen.onrender.com/tours"
       />
       <div className="pt-20 pb-20 min-h-screen bg-[#faf9f6] dark:bg-[#0f0f1a]">
       <div className="relative h-64 sm:h-80 bg-[#1a1a2e] overflow-hidden">

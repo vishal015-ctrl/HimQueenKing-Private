@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, MapPin, ChevronDown, Star, ArrowRight } from "lucide-react";
+import { Search, MapPin, ChevronDown, Star, ArrowRight, Users, ShieldCheck, Headphones } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { destinations } from "../data/travelData";
+import heroHimalaya from "../assets/hero-himalaya.jpg";
+import destSpiti from "../assets/destinations/dest-spiti.jpg";
+import destLeh from "../assets/destinations/dest-leh-ladakh.jpg";
+import destManali from "../assets/destinations/dest-manali.jpg";
+import destValley from "../assets/destinations/dest-valley-of-flowers.jpg";
+import destChitkul from "../assets/destinations/dest-chitkul.jpg";
+import destShimla from "../assets/destinations/dest-shimla.jpg";
 import dieWithMemories from "../assets/die with memories.jpg";
 import justGoOut from "../assets/just go out.jpg";
 import lifeIsTooShort from "../assets/life is too short.jpg";
@@ -11,50 +18,91 @@ import peace from "../assets/peace.jpg";
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80",
-    title: "Explore the", highlight: "Himalayas",
+    image: heroHimalaya,
+    title: "Discover the",
+    highlight: "Himalayas",
     subtitle: "Handcrafted journeys through India's most breathtaking mountain landscapes",
     tag: "Mountain Escapes",
   },
   {
-    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80",
-    title: "Discover Hidden", highlight: "Valleys",
-    subtitle: "Pristine trails, ancient monasteries, and untouched beauty await",
-    tag: "Valley Tours",
+    image: destSpiti,
+    title: "Into the Wild",
+    highlight: "Spiti Valley",
+    subtitle: "Ancient monasteries, cold deserts and the world's highest inhabited villages",
+    tag: "Off-Beat Adventures",
   },
   {
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1920&q=80",
-    title: "Adventure", highlight: "Awaits",
-    subtitle: "From snow-capped peaks to turquoise lakes — your journey starts here",
-    tag: "Adventure Tours",
+    image: destLeh,
+    title: "Land of High",
+    highlight: "Passes",
+    subtitle: "Turquoise lakes, barren peaks and unforgettable road trips across Ladakh",
+    tag: "Ladakh Expeditions",
   },
   {
-    image: dieWithMemories, fit: "80% 150%",
-    title: "Die With", highlight: "Memories",
+    image: destManali,
+    title: "Escape to",
+    highlight: "Manali",
+    subtitle: "Snow-clad peaks, pine forests and café culture in the heart of Himachal",
+    tag: "Hill Station Getaways",
+  },
+  {
+    image: destShimla,
+    title: "The Queen of",
+    highlight: "Hills",
+    subtitle: "Colonial charm, the Mall Road and pine-clad slopes in Himachal's summer capital",
+    tag: "Shimla Getaways",
+  },
+  {
+    image: destValley,
+    title: "Walk Through",
+    highlight: "Blooming Valleys",
+    subtitle: "Trek to alpine meadows carpeted with a hundred species of wildflowers",
+    tag: "Trekking Paradise",
+  },
+  {
+    image: destChitkul,
+    title: "Off the",
+    highlight: "Beaten Path",
+    subtitle: "Hidden villages and untouched valleys waiting to be explored",
+    tag: "Hidden Gems",
+  },
+  {
+    image: dieWithMemories,
+    fit: "80% 150%",
+    title: "Die With",
+    highlight: "Memories",
     subtitle: "Collect moments, not things — every trip writes a story worth keeping",
     tag: "Make Memories",
   },
   {
-    image: justGoOut, fit: "100% 100%",
-    title: "Just", highlight: "Go Out",
+    image: justGoOut,
+    fit: "100% 100%",
+    title: "Just",
+    highlight: "Go Out",
     subtitle: "Pack your bags and wander — the mountains are calling your name",
     tag: "Wander Often",
   },
   {
-    image: lifeIsTooShort, fit: "100% 90%",
-    title: "Life Is", highlight: "Too Short",
+    image: lifeIsTooShort,
+    fit: "100% 90%",
+    title: "Life Is",
+    highlight: "Too Short",
     subtitle: "Don't wait for the perfect moment — take the trip and make it perfect",
     tag: "Live Now",
   },
   {
-    image: sryNetflix, fit: "100% 100%",
-    title: "Sorry", highlight: "Netflix",
+    image: sryNetflix,
+    fit: "100% 100%",
+    title: "Sorry",
+    highlight: "Netflix",
     subtitle: "This season's best drama is the one happening out on the trail",
     tag: "Offline Mode",
   },
   {
-    image: peace, fit: "90% 100%",
-    title: "Find Your", highlight: "Peace",
+    image: peace,
+    fit: "90% 100%",
+    title: "Find Your",
+    highlight: "Peace",
     subtitle: "Escape the noise and rediscover calm in the heart of the Himalayas",
     tag: "Inner Peace",
   },
@@ -68,6 +116,13 @@ const shuffle = (arr) => {
   }
   return a;
 };
+
+const trust = [
+  { icon: Star, label: "4.9/5 Traveler Rating" },
+  { icon: Users, label: "12,000+ Happy Travelers" },
+  { icon: ShieldCheck, label: "100% Customizable" },
+  { icon: Headphones, label: "24/7 Trip Support" },
+];
 
 const Hero = () => {
   const [deck] = useState(() => shuffle(slides));
@@ -100,13 +155,13 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-[90vh] min-h-150 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative h-[92vh] min-h-150 flex flex-col items-center justify-center overflow-hidden">
       {/* Background */}
       <AnimatePresence mode="wait">
         <motion.div key={current}
           className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }} transition={{ duration: 1.5 }}
+          initial={{ opacity: 0, scale: 1.08 }} animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }} transition={{ duration: 1.6 }}
         >
           <div
             className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl opacity-70"
@@ -118,10 +173,10 @@ const Hero = () => {
           />
         </motion.div>
       </AnimatePresence>
-      <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/60" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/35 to-black/70" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 w-full max-w-5xl mx-auto flex flex-col items-center gap-8">
+      <div className="relative z-10 text-center px-4 w-full max-w-5xl mx-auto flex flex-col items-center gap-7">
         <AnimatePresence mode="wait">
           <motion.div key={current + "t"} initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
@@ -129,23 +184,23 @@ const Hero = () => {
             <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm px-4 py-1.5 rounded-full font-medium">
               <MapPin size={13} /> {slide.tag}
             </span>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1]">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05]">
               {slide.title}{" "}
               <span className="text-[#f0c75e]">{slide.highlight}</span>
             </h1>
-            <p className="text-white/75 text-lg md:text-xl max-w-2xl font-light">{slide.subtitle}</p>
+            <p className="text-white/80 text-lg md:text-xl max-w-2xl font-light">{slide.subtitle}</p>
           </motion.div>
         </AnimatePresence>
 
         {/* Search */}
         <div className="relative w-full max-w-2xl">
           <motion.form onSubmit={handleSearch} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="bg-white/95 backdrop-blur-sm rounded-2xl p-2 flex items-center gap-2 w-full shadow-xl">
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="bg-white/95 backdrop-blur-sm rounded-2xl p-2 flex items-center gap-2 w-full shadow-2xl">
             <div className="flex items-center gap-3 flex-1 px-4 py-3">
               <MapPin size={18} className="text-[#b8860b] shrink-0" />
               <div className="flex flex-col min-w-0">
-                <label className="text-gray-400 text-xs font-medium">Destination</label>
+                <label className="text-gray-400 text-xs font-medium">Where do you want to go?</label>
                 <input
                   className="bg-transparent text-gray-900 text-sm outline-none placeholder:text-gray-400 w-full"
                   placeholder="Manali, Ladakh, Spiti..."
@@ -202,6 +257,16 @@ const Hero = () => {
             )}
           </AnimatePresence>
         </div>
+
+        {/* Trust badges */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-white/80 text-xs sm:text-sm">
+          {trust.map((t) => (
+            <span key={t.label} className="flex items-center gap-1.5">
+              <t.icon size={14} className="text-[#f0c75e]" fill={t.icon === Star ? "#f0c75e" : "none"} /> {t.label}
+            </span>
+          ))}
+        </motion.div>
 
         {/* Dots */}
         <div className="flex gap-2">

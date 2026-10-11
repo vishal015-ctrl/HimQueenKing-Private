@@ -43,7 +43,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-white">HimQueenKing</h1>
+          <h1 className="text-3xl font-bold text-white">HimKingQueen</h1>
           <p className="text-gray-400 mt-2">Admin Panel Login</p>
         </div>
 

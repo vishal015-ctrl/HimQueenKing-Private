@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: himqueenking
+    name: himkingqueen
     runtime: node
     rootDir: /
     region: oregon

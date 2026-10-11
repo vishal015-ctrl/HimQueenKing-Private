@@ -4,7 +4,7 @@ import { api } from "../api";
 import { useAuth } from "../store/authStore";
 import { useTheme } from "../store/themeStore";
 import { Mail, Lock, User, Eye, EyeOff, Loader2 } from "lucide-react";
-import logo from "../assets/myHimkingqeenlogo.png";
+import Logo from "../components/Logo";
 
 const UserLogin = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -50,12 +50,8 @@ const UserLogin = () => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <a href="/" className="inline-flex items-center gap-2 mb-4">
-            <img
-              src={logo}
-              alt="HimQueenKing"
-              className="h-16 w-auto object-contain"
-            />
+          <a href="/" className="inline-flex items-center mb-4" aria-label="HimKingQueen home">
+            <Logo />
           </a>
           <h1 className={`text-2xl font-bold ${dark ? "text-white" : "text-gray-900"}`}>
             {isLogin ? "Welcome Back" : "Create Account"}
@@ -63,7 +59,7 @@ const UserLogin = () => {
           <p className={`text-sm mt-1 ${dark ? "text-gray-400" : "text-gray-500"}`}>
             {isLogin
               ? "Sign in to manage your bookings and trips"
-              : "Join HimQueenKing to explore the Himalayas"}
+              : "Join HimKingQueen to explore the Himalayas"}
           </p>
         </div>
 

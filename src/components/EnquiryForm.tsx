@@ -17,7 +17,7 @@ export default function EnquiryForm({ itemName, itemType }: EnquiryFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `*Enquiry - HimQueenKing*\n\n` +
+    const msg = `*Enquiry - HimKingQueen*\n\n` +
       `📦 *${itemType}:* ${itemName}\n\n` +
       `👤 *Name:* ${name}\n` +
       `📞 *Phone:* ${phone}\n` +

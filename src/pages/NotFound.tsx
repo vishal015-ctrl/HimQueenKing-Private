@@ -8,7 +8,7 @@ const NotFound = () => (
     <SEO
       title="Page Not Found"
       description="The page you are looking for does not exist."
-      url="https://himqueenking.onrender.com/404"
+      url="https://himkingqueen.onrender.com/404"
     />
     <div className="pt-24 pb-20 min-h-screen bg-[#faf9f6] dark:bg-[#0f0f1a] flex items-center justify-center px-4">
     <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-center">

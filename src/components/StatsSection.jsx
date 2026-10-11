@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { Users, MapPin, Star, Shield } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: 12000, suffix: "+", label: "Happy Travelers", color: "#b8860b" },
-  { icon: MapPin, value: 50, suffix: "+", label: "Destinations", color: "#2d6a4f" },
+  { icon: Users, value: 1000, suffix: "+", label: "Happy Travelers", color: "#b8860b" },
+  { icon: MapPin, value: 35, suffix: "+", label: "Destinations", color: "#2d6a4f" },
   { icon: Star, value: 4.9, suffix: "/5", label: "Avg Rating", color: "#c8860b", decimal: true },
-  { icon: Shield, value: 15, suffix: " yrs", label: "Experience", color: "#1a1a2e" },
+  { icon: Shield, value: 10, suffix: " yrs", label: "Experience", color: "#1a1a2e" },
 ];
 
 const StatItem = ({ stat, index }) => {

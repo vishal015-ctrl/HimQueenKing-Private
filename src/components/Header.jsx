@@ -2,14 +2,13 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone, Sun, Moon } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { useTheme } from "../store/themeStore";
-import logo from "../assets/myHimkingqeenlogo.png";
+import Logo from "./Logo";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Destinations", href: "/destinations" },
-  { label: "Tours", href: "/tours" },
-  { label: "Treks", href: "/treks" },
   { label: "Hotels", href: "/hotels" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -42,12 +41,8 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2.5 shrink-0">
-            <img
-              src={logo}
-              alt="HimQueenKing"
-              className="h-15 lg:h-20 w-auto object-contain"
-            />
+          <a href="/" className="flex items-center shrink-0" aria-label="HimKingQueen home">
+            <Logo />
           </a>
 
           {/* Desktop Nav */}
@@ -74,8 +69,8 @@ const Header = () => {
             <button
               onClick={toggle}
               className={`p-2.5 rounded-xl transition-all ${dark
-                  ? "bg-gray-800 text-yellow-400 hover:bg-gray-700"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                ? "bg-gray-800 text-yellow-400 hover:bg-gray-700"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               aria-label="Toggle dark mode"
             >

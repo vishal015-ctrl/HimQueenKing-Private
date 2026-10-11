@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
       await transporter.sendMail({
         from: process.env.GMAIL_USER,
         to: email,
-        subject: `Dream Trip to ${dreamDestination} - HimQueenKing`,
+        subject: `Dream Trip to ${dreamDestination} - HimKingQueen`,
         html: `
           <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;">
             <h2 style="color:#f97316;">Dream Received!</h2>
@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
               <li>You'll receive a detailed plan at your email</li>
             </ul>
             <hr style="border:1px solid #eee;" />
-            <p style="color:#666;font-size:12px;">HimQueenKing - Your Gateway to the Himalayas</p>
+            <p style="color:#666;font-size:12px;">HimKingQueen - Your Gateway to the Himalayas</p>
           </div>
         `,
       });

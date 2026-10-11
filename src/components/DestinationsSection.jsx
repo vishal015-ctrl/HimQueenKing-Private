@@ -1,16 +1,12 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Star, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { destinations, budgetRanges } from "../data/travelData";
 
-const filters = [
-  { key: "All", label: "All" },
-  { key: "budget", label: "Budget" },
-  { key: "mid", label: "Mid Range" },
-  { key: "premium", label: "Premium" },
-  { key: "luxury", label: "Luxury" },
-];
+const featuredIds = [1, 3, 2, 7, 6, 9];
+const featured = featuredIds
+  .map((id) => destinations.find((d) => d.id === id))
+  .filter(Boolean);
 
 const DestinationCard = ({ dest, index }) => (
   <motion.article className="card group"
@@ -54,48 +50,30 @@ const DestinationCard = ({ dest, index }) => (
   </motion.article>
 );
 
-const DestinationsSection = () => {
-  const [filter, setFilter] = useState("All");
-  const filtered = filter === "All" ? destinations : destinations.filter(d => d.budget === filter);
+const DestinationsSection = () => (
+  <section className="py-24 px-4 bg-white dark:bg-[#1a1a2e]">
+    <div className="max-w-7xl mx-auto">
+      <motion.div className="text-center mb-12"
+        initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }} transition={{ duration: 0.6 }}>
+        <span className="section-label">Top Destinations</span>
+        <h2 className="section-title mt-2 mb-4">
+          Explore <span className="text-[#b8860b]">Main Places</span> in India
+        </h2>
+        <p className="section-subtitle mx-auto">From the mountains of Himachal & Ladakh to the holy towns of Uttarakhand — the most loved destinations, handpicked for you</p>
+      </motion.div>
 
-  return (
-    <section className="py-24 px-4 bg-[#faf9f6] dark:bg-[#0f0f1a]">
-      <div className="max-w-7xl mx-auto">
-        <motion.div className="text-center mb-12"
-          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.6 }}>
-          <span className="section-label">Popular Destinations</span>
-          <h2 className="section-title mt-2 mb-4">
-            Explore <span className="text-[#b8860b]">Top Places</span>
-          </h2>
-          <p className="section-subtitle mx-auto">Handpicked destinations loved by thousands of travelers from around the world</p>
-        </motion.div>
-
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {filters.map(f => (
-            <button key={f.key} onClick={() => setFilter(f.key)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
-                filter === f.key
-                  ? "bg-[#b8860b] text-white border-[#b8860b] shadow-md shadow-[#b8860b]/15"
-                  : "bg-white text-gray-600 border-gray-200 hover:border-[#b8860b] hover:text-[#b8860b] dark:bg-[#1a1a2e] dark:text-gray-400 dark:border-gray-700 dark:hover:border-[#b8860b] dark:hover:text-[#b8860b]"
-              }`}>
-              {f.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((dest, i) => <DestinationCard key={dest.id} dest={dest} index={i} />)}
-        </div>
-
-        <div className="text-center mt-10">
-          <Link to="/destinations" className="btn-outline">
-            View All Destinations <ArrowRight size={16} />
-          </Link>
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featured.map((dest, i) => <DestinationCard key={dest.id} dest={dest} index={i} />)}
       </div>
-    </section>
-  );
-};
+
+      <div className="text-center mt-10">
+        <Link to="/destinations" className="btn-outline">
+          View All Destinations <ArrowRight size={16} />
+        </Link>
+      </div>
+    </div>
+  </section>
+);
 
 export default DestinationsSection;

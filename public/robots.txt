@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api
 
-Sitemap: https://himqueenking.onrender.com/sitemap.xml
+Sitemap: https://himkingqueen.onrender.com/sitemap.xml

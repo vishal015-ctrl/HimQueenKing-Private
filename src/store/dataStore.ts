@@ -3,6 +3,7 @@
  * Central data store using localStorage.
  * Admin writes here; public pages read from here.
  */
+import { destinationImages, trekImages } from "../data/images";
 
 export interface TrekItem {
   id: string;
@@ -55,7 +56,7 @@ const defaultTreks: TrekItem[] = [
     title: 'Hampta Pass Trek',
     desc: 'One of the most dramatic crossover treks in Himachal. Traverses from the lush green meadows of Kullu Valley to the cold desert landscape of Lahaul.',
     price: 8499,
-    img: '/src/assets/trek-hampta.jpg',
+    img: trekImages["trek-hampta"],
     difficulty: 'Moderate',
     duration: '5 Days / 4 Nights',
     altitude: '14,100 ft',
@@ -66,7 +67,7 @@ const defaultTreks: TrekItem[] = [
     title: 'Kheerganga & Parvati Valley',
     desc: 'An iconic alpine trek inside the scenic Parvati Valley. Reaches a scenic meadow famous for its healing hot springs.',
     price: 3499,
-    img: '/src/assets/trek-kheerganga.jpg',
+    img: trekImages["trek-kheerganga"],
     difficulty: 'Easy',
     duration: '2 Days / 1 Night',
     altitude: '9,700 ft',
@@ -77,7 +78,7 @@ const defaultTreks: TrekItem[] = [
     title: 'Triund Ridge Expedition',
     desc: 'The crown jewel of Dharamshala, offering majestic panoramic views of the Dhauladhar range and Kangra valley.',
     price: 2999,
-    img: '/src/assets/trek-triund.jpg',
+    img: trekImages["trek-triund"],
     difficulty: 'Easy',
     duration: '2 Days / 1 Night',
     altitude: '9,350 ft',
@@ -122,7 +123,7 @@ const defaultPackages: TravelPackage[] = [
     destination: 'Shimla & Manali',
     desc: 'The classic Himachal experience. Explore the colonial charm of Shimla and the dramatic valleys of Manali in one curated journey.',
     price: 22999,
-    img: '/src/assets/dest-shimla.jpg',
+    img: destinationImages["dest-shimla"],
     duration: '7 Days / 6 Nights',
     includes: ['Hotel Stay', 'All Meals', 'AC Transport', 'Tour Guide'],
   },
@@ -132,7 +133,7 @@ const defaultPackages: TravelPackage[] = [
     destination: 'Spiti Valley',
     desc: 'An off-the-beaten-path adventure through the cold desert of Spiti. Visit ancient monasteries, fossil sites, and the world\'s highest villages.',
     price: 18999,
-    img: '/src/assets/dest-spiti.jpg',
+    img: destinationImages["dest-spiti"],
     duration: '8 Days / 7 Nights',
     includes: ['Camp Stay', 'Breakfast & Dinner', 'Jeep Safari', 'Permits'],
   },
@@ -142,7 +143,7 @@ const defaultPackages: TravelPackage[] = [
     destination: 'Kasol & Manikaran',
     desc: 'A soul-rejuvenating retreat along the banks of the Parvati River. Perfect for backpackers, yoga lovers, and nature seekers.',
     price: 9999,
-    img: '/src/assets/dest-kasol.jpg',
+    img: destinationImages["dest-kasol"],
     duration: '4 Days / 3 Nights',
     includes: ['Hostel Stay', 'Breakfast', 'Guide', 'River Camping Night'],
   },

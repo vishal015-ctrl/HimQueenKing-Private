@@ -12,6 +12,7 @@ import Treks from "./pages/Treks";
 import Hotels from "./pages/Hotels";
 import HotelDetail from "./pages/HotelDetail";
 import Services from "./pages/Services";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 import DreamDestination from "./pages/DreamDestination";
 import AdminLayout from "./pages/admin/AdminLayout";
@@ -42,6 +43,7 @@ const PublicLayout = () => {
           <Route path="/hotels" element={<Hotels />} />
           <Route path="/hotels/:id" element={<HotelDetail />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/dream-destination" element={<DreamDestination />} />
           <Route path="*" element={<NotFound />} />

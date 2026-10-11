@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Mountain } from "lucide-react";
 
 const socialLinks = [
   { href: "#", label: "Instagram", path: "M16 3.04a4 4 0 0 1 3.84 3.84A8 8 0 0 1 24 12a8 8 0 0 1-4.16 6.96A4 4 0 0 1 16 22.8a4 4 0 0 1-3.84-3.84A8 8 0 0 1 8 12a8 8 0 0 1 4.16-6.96A4 4 0 0 1 16 3.04z" },
@@ -13,8 +13,10 @@ const Footer = () => (
         {/* Brand */}
         <div>
           <a href="/" className="flex items-center gap-2.5 mb-4">
-            <span className="w-9 h-9 rounded-lg bg-[#b8860b] flex items-center justify-center text-white font-bold text-sm">HQK</span>
-            <span className="text-lg font-bold text-white">HimQueenKing</span>
+            <span className="relative w-9 h-9 rounded-lg bg-gradient-to-br from-[#d4a017] via-[#b8860b] to-[#8a6508] flex items-center justify-center shadow-md shadow-black/20 ring-1 ring-white/10">
+              <Mountain size={18} className="text-white" strokeWidth={2.25} />
+            </span>
+            <span className="text-lg font-bold text-white">HimKingQueen</span>
           </a>
           <p className="text-sm leading-relaxed text-gray-400 mb-6">
             Crafting unforgettable Himalayan journeys since 2010. Your trusted travel partner for Manali, Ladakh, Spiti, and beyond.
@@ -70,11 +72,11 @@ const Footer = () => (
             </li>
             <li className="flex items-center gap-3 text-sm">
               <Phone size={16} className="text-[#b8860b] shrink-0" />
-              <a href="tel:+917018565550git " className="text-gray-400 hover:text-[#b8860b] transition-colors">+91 70185-65550</a>
+              <a href="tel:+917018565550" className="text-gray-400 hover:text-[#b8860b] transition-colors">+91 70185-65550</a>
             </li>
             <li className="flex items-center gap-3 text-sm">
               <Mail size={16} className="text-[#b8860b] shrink-0" />
-              <a href="mailto:hello@himqueenking.com" className="text-gray-400 hover:text-[#b8860b] transition-colors">hello@himqueenking.com</a>
+              <a href="mailto:hello@himkingqueen.com" className="text-gray-400 hover:text-[#b8860b] transition-colors">hello@himkingqueen.com</a>
             </li>
           </ul>
           <div className="mt-6 flex items-center gap-3 bg-white/5 rounded-xl p-3">
@@ -89,7 +91,7 @@ const Footer = () => (
 
       {/* Bottom */}
       <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-gray-500">© {new Date().getFullYear()} HimQueenKing. All rights reserved.</p>
+        <p className="text-sm text-gray-500">© {new Date().getFullYear()} HimKingQueen. All rights reserved.</p>
         <div className="flex gap-6 text-sm text-gray-500">
           <a href="#privacy" className="hover:text-[#b8860b] transition-colors">Privacy Policy</a>
           <a href="#terms" className="hover:text-[#b8860b] transition-colors">Terms of Service</a>

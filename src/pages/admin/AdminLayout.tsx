@@ -31,7 +31,7 @@ const AdminLayout = () => {
     <div className="flex min-h-screen bg-gray-100">
       <aside className="w-64 bg-gray-900 text-white flex flex-col shadow-xl">
         <div className="p-6 border-b border-gray-700">
-          <h2 className="text-xl font-bold tracking-wide">HimQueenKing</h2>
+          <h2 className="text-xl font-bold tracking-wide">HimKingQueen</h2>
           <p className="text-xs text-gray-400 mt-1">Admin Panel</p>
         </div>
 

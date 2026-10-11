@@ -25,9 +25,9 @@ const Services = () => (
     <div className="pt-20 pb-20 min-h-screen bg-[#faf9f6] dark:bg-[#0f0f1a]">
     <SEO
       title="Our Services — Travel, Transport, Adventure & Photography Tours"
-      description="HimQueenKing offers premium transport, custom itineraries, travel insurance, photography tours, adventure activities & 24/7 support for your Himalayan trip."
+      description="HimKingQueen offers premium transport, custom itineraries, travel insurance, photography tours, adventure activities & 24/7 support for your Himalayan trip."
       keywords="himachal travel services, himalaya tour services, adventure activities himachal, photography tour india, travel agency services"
-      url="https://himqueenking.onrender.com/services"
+      url="https://himkingqueen.onrender.com/services"
     />
       <div className="relative h-64 sm:h-80 bg-[#1a1a2e] overflow-hidden">
       <div className="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=60')] bg-cover bg-center" />

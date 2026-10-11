@@ -3,7 +3,7 @@ import { Clock, Users, Star, CheckCircle2, ArrowRight, MapPin } from "lucide-rea
 import { Link } from "react-router-dom";
 import { tours } from "../data/travelData";
 
-const packages = tours.slice(0, 6);
+const packages = tours.slice(-3).reverse();
 
 const TourPackageCard = ({ pkg, index }) => (
   <motion.article className="card flex flex-col"
@@ -56,11 +56,11 @@ const TourPackagesSection = () => (
       <motion.div className="text-center mb-12"
         initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }} transition={{ duration: 0.6 }}>
-        <span className="section-label">Curated Packages</span>
+        <span className="section-label">Fresh & Trending</span>
         <h2 className="section-title mt-2 mb-4">
-          Our <span className="text-[#b8860b]">Best Packages</span>
+          Latest <span className="text-[#b8860b]">Tour Packages</span>
         </h2>
-        <p className="section-subtitle mx-auto">All-inclusive travel packages for HP & Uttarakhand – detailed day-by-day itineraries</p>
+        <p className="section-subtitle mx-auto">Our newest all-inclusive journeys across Himachal Pradesh, Uttarakhand & Ladakh</p>
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {packages.map((pkg, i) => <TourPackageCard key={pkg.id} pkg={pkg} index={i} />)}

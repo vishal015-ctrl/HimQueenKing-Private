@@ -17,7 +17,7 @@ export default function BookingModal({ item, onClose }: BookingModalProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `*Booking Request - HimQueenKing*\n\n` +
+    const msg = `*Booking Request - HimKingQueen*\n\n` +
       `📦 *Item:* ${item.title}\n` +
       (item.duration ? `📅 *Duration:* ${item.duration}\n` : "") +
       (item.location ? `📍 *Location:* ${item.location}\n` : "") +

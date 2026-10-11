@@ -30,10 +30,10 @@ const Contact = () => {
     return (
       <div className="pt-24 pb-20 min-h-screen bg-[#faf9f6] dark:bg-[#0f0f1a] flex items-center justify-center px-4">
         <SEO
-          title="Contact HimQueenKing — Book Your Himachal Pradesh Tour Package"
-          description="Contact HimQueenKing to book your Himachal Pradesh, Shimla Manali, Spiti Valley or Ladakh tour package. Call +91 9805556015 or WhatsApp us."
+          title="Contact HimKingQueen — Book Your Himachal Pradesh Tour Package"
+          description="Contact HimKingQueen to book your Himachal Pradesh, Shimla Manali, Spiti Valley or Ladakh tour package. Call +91 9805556015 or WhatsApp us."
           keywords="contact travel agency himachal, book himachal tour, shimla manali tour booking, himachal travel agency contact"
-          url="https://himqueenking.onrender.com/contact"
+          url="https://himkingqueen.onrender.com/contact"
         />
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 200 }} className="bg-white dark:bg-[#1a1a2e] rounded-2xl shadow-lg p-10 sm:p-14 text-center max-w-md w-full border border-gray-100 dark:border-gray-700">
           <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-green-50 dark:bg-green-900/30 flex items-center justify-center">
@@ -52,10 +52,10 @@ const Contact = () => {
   return (
     <div className="pt-20 pb-20 min-h-screen bg-[#faf9f6] dark:bg-[#0f0f1a]">
       <SEO
-        title="Contact HimQueenKing — Book Your Himachal Pradesh Tour Package"
-        description="Contact HimQueenKing to book your Himachal Pradesh, Shimla Manali, Spiti Valley or Ladakh tour package. Call +91 9805556015 or WhatsApp us."
+        title="Contact HimKingQueen — Book Your Himachal Pradesh Tour Package"
+        description="Contact HimKingQueen to book your Himachal Pradesh, Shimla Manali, Spiti Valley or Ladakh tour package. Call +91 9805556015 or WhatsApp us."
         keywords="contact travel agency himachal, book himachal tour, shimla manali tour booking, himachal travel agency contact"
-        url="https://himqueenking.onrender.com/contact"
+        url="https://himkingqueen.onrender.com/contact"
       />
       {/* Hero */}
         <div className="relative h-64 sm:h-80 bg-[#1a1a2e] overflow-hidden">
@@ -133,7 +133,7 @@ const Contact = () => {
                   <div className="w-10 h-10 rounded-xl bg-[#b8860b]/10 flex items-center justify-center shrink-0"><Mail size={18} className="text-[#b8860b]" /></div>
                   <div>
                     <p className="text-sm font-medium text-gray-900 dark:text-gray-100">Email Us</p>
-                    <a href="mailto:hello@himqueenking.com" className="text-sm text-gray-500 dark:text-gray-400 hover:text-[#b8860b]">hello@himqueenking.com</a>
+                    <a href="mailto:hello@himkingqueen.com" className="text-sm text-gray-500 dark:text-gray-400 hover:text-[#b8860b]">hello@himkingqueen.com</a>
                   </div>
                 </div>
               </div>

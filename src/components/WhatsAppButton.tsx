@@ -28,7 +28,7 @@ const WhatsAppButton = () => {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-bold text-sm">Chat with us!</p>
-                  <p className="text-xs text-white/80">HimQueenKing Travel Experts</p>
+                  <p className="text-xs text-white/80">HimKingQueen Travel Experts</p>
                 </div>
                 <button onClick={() => setOpen(false)} className="text-white/80 hover:text-white">
                   <X size={18} />

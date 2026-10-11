@@ -29,7 +29,7 @@ const Hotels = () => {
         title="Hotels & Stays in Himachal Pradesh, Manali, Ladakh — Best Deals"
         description="Handpicked hotels, resorts, camps & homestays in Himachal Pradesh, Manali, Ladakh, Spiti, Kasol, Rishikesh. Budget to luxury stays for your Himalayan trip."
         keywords="himachal pradesh hotels, manali hotels, ladakh hotels, spiti homestay, kasol camps, best hotels in himachal, himachal resort, shimla manali hotel, rishikesh hotel, budget hotels himachal"
-        url="https://himqueenking.onrender.com/hotels"
+        url="https://himkingqueen.onrender.com/hotels"
       />
         <div className="relative h-64 sm:h-80 bg-[#1a1a2e] overflow-hidden">
         <div className="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=60')] bg-cover bg-center" />

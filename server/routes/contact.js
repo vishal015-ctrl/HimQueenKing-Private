@@ -24,14 +24,14 @@ router.post("/", async (req, res) => {
       await transporter.sendMail({
         from: process.env.GMAIL_USER,
         to: email,
-        subject: "Your request has been accepted - HimQueenKing",
+        subject: "Your request has been accepted - HimKingQueen",
         html: `
           <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;">
             <h2 style="color:#f97316;">Thank You, ${name}!</h2>
             <p>Your request has been accepted. Our travel experts will review your message and get back to you within 24 hours.</p>
             <p><strong>Reference ID:</strong> #HQK-${result.insertId}</p>
             <hr style="border:1px solid #eee;" />
-            <p style="color:#666;font-size:12px;">HimQueenKing - Your Gateway to the Himalayas</p>
+            <p style="color:#666;font-size:12px;">HimKingQueen - Your Gateway to the Himalayas</p>
           </div>
         `,
       });
