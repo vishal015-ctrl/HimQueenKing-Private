@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import BudgetPlanner from "../components/BudgetPlanner";
 import TourPackagesSection from "../components/TourPackagesSection";
 import LatestTreks from "../components/LatestTreks";
 import DestinationsSection from "../components/DestinationsSection";
@@ -16,6 +17,7 @@ const Home = () => (
     />
     <main>
       <Hero />
+      <BudgetPlanner />
       <TourPackagesSection />
       <LatestTreks />
       <DestinationsSection />

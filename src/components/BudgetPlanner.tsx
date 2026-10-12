@@ -33,7 +33,7 @@ const BudgetPlanner = () => {
             const r = budgetRanges[opt.key];
             return (
               <motion.button key={opt.key}
-                onClick={() => navigate(`/tours?budget=${opt.key}`)}
+                onClick={() => navigate(`/budget/${opt.key}`)}
                 whileHover={{ y: -4 }}
                 className="group text-left p-6 rounded-2xl border-2 border-gray-200 bg-white hover:border-[#b8860b] transition-all duration-300 dark:border-gray-700 dark:bg-[#1a1a2e] dark:hover:border-[#b8860b]">
                 <span className="text-3xl mb-3 block">{opt.icon}</span>
@@ -43,7 +43,7 @@ const BudgetPlanner = () => {
                 <h3 className="font-bold text-lg mb-2 text-gray-900 dark:text-gray-100 group-hover:text-[#b8860b] transition-colors">{r.label}</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{opt.desc}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-[#b8860b] text-sm font-semibold">
-                  View Tours <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                  View Tours & Treks <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                 </span>
               </motion.button>
             );

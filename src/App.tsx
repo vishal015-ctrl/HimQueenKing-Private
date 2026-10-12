@@ -9,6 +9,7 @@ import DestinationDetail from "./pages/DestinationDetail";
 import Tours from "./pages/Tours";
 import TourDetail from "./pages/TourDetail";
 import Treks from "./pages/Treks";
+import BudgetResults from "./pages/BudgetResults";
 import Hotels from "./pages/Hotels";
 import HotelDetail from "./pages/HotelDetail";
 import Services from "./pages/Services";
@@ -40,6 +41,7 @@ const PublicLayout = () => {
           <Route path="/tours" element={<Tours />} />
           <Route path="/tours/:id" element={<TourDetail />} />
           <Route path="/treks" element={<Treks />} />
+          <Route path="/budget/:level" element={<BudgetResults />} />
           <Route path="/hotels" element={<Hotels />} />
           <Route path="/hotels/:id" element={<HotelDetail />} />
           <Route path="/services" element={<Services />} />

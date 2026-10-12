@@ -1,6 +1,7 @@
 import { trekImages } from "./images";
+import type { BudgetLevel } from "./travelData";
 
-export const allTreks = [
+const rawTreks = [
   {
     id: 1, title: "Kheerganga Trek", region: "Parvati Valley, HP", difficulty: "Easy", duration: "3D / 2N", altitude: "9,700 ft", bestTime: "Apr – Nov",
     image: trekImages["Kheerganga Trek"],
@@ -633,3 +634,16 @@ export const allTreks = [
     mealsInfo: "Meals at Dhanaulti restaurants. Simple North Indian food. Tea & snacks available near the base.",
   },
 ];
+
+const trekBudgetByDuration = (duration: string): BudgetLevel => {
+  const days = parseInt(duration, 10);
+  if (days <= 4) return "budget";
+  if (days <= 7) return "mid";
+  if (days <= 10) return "premium";
+  return "luxury";
+};
+
+export const allTreks = rawTreks.map((trek) => ({
+  ...trek,
+  budget: trekBudgetByDuration(trek.duration),
+}));
